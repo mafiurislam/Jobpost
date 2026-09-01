@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="340" viewBox="0 0 300 340">
+  <!-- Card Base -->
+  <rect width="300" height="340" rx="16" fill="#ffeedd"/>
+  
+  <!-- Decorative Shapes Background -->
+  <circle cx="240" cy="80" r="50" fill="#ffffff" opacity="0.4"/>
+  <circle cx="60" cy="220" r="40" fill="#ffffff" opacity="0.3"/>
+  
+  <!-- Male Leader Silhouette -->
+  <g transform="translate(45, 30)">
+    <!-- Body / Shirt -->
+    <path d="M 25,280 L 25,180 C 25,145 65,135 105,135 C 145,135 185,145 185,180 L 185,280 Z" fill="#ffffff"/>
+    
+    <!-- White Collar -->
+    <path d="M 85,135 L 105,175 L 125,135 Z" fill="#ffffff"/>
+    
+    <!-- Neck -->
+    <rect x="90" y="110" width="30" height="30" rx="5" fill="#f5c29b"/>
+    
+    <!-- Head -->
+    <ellipse cx="105" cy="80" rx="42" ry="50" fill="#f5c29b"/>
+    
+    <!-- Hair -->
+    <path d="M 60,75 C 60,35 90,25 105,25 C 120,25 150,35 150,75 C 150,60 135,40 105,40 C 75,40 60,60 60,75 Z" fill="#1c1917"/>
+    
+    <!-- Beard / Short Stubble -->
+    <path d="M 75,90 C 75,125 135,125 135,90 C 135,115 125,125 105,125 C 85,125 75,115 75,90 Z" fill="#292524" opacity="0.6"/>
+  </g>
+</svg>

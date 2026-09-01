@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="360" viewBox="0 0 300 360">
+    <rect width="300" height="360" rx="20" fill="#1b1827"/>
+    <circle cx="150" cy="130" r="70" fill="#2cb6a6" opacity="0.2"/>
+    <circle cx="150" cy="130" r="55" fill="#ffffff"/>
+    <text x="150" y="142" font-family="'Outfit', sans-serif" font-weight="bold" font-size="42" fill="#1b1827" text-anchor="middle">PM</text>
+    <path d="M 60 300 C 60 210, 240 210, 240 300 Z" fill="#2cb6a6" opacity="0.9"/>
+    <text x="150" y="325" font-family="'Outfit', sans-serif" font-weight="bold" font-size="18" fill="#ffffff" text-anchor="middle">Prasanna Manna</text>
+    <text x="150" y="345" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" fill="#e6f7f5" text-anchor="middle">HR & Student Executive</text>
+  </svg>

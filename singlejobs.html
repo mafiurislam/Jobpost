@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Single Job Details - Bright Future Consultancy</title>
+  <meta name="description" content="View job details, requirements, salary, location and apply 100% free with Bright Future Consultancy.">
+  
+  <link rel="icon" type="image/png" href="assets/images/logo.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-light">
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <div class="container d-flex justify-content-between align-items-center flex-wrap">
+      <div class="d-flex align-items-center gap-3">
+        <span class="top-bar-badge"><i class="fas fa-certificate me-1"></i> ISO Certified | UDYAM-WB-11-0035754</span>
+      </div>
+      <div class="d-flex align-items-center gap-3">
+        <a href="tel:7001420469"><i class="fas fa-phone-alt me-1"></i> Customer service</a>
+        <span class="text-white-50">|</span>
+        <a href="mailto:brightfutureconsultancybwn@gmail.com"><i class="fas fa-envelope me-1"></i> brightfutureconsultancybwn@gmail.com</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="main-header">
+    <nav class="navbar navbar-expand-lg py-3">
+      <div class="container">
+        <a class="navbar-brand py-0" href="index.html">
+          <img src="assets/images/logo.png" alt="Bright Future Consultancy Logo" class="brand-logo">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarMain">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+            <li class="nav-item"><a class="nav-link active" href="jobs.html">Jobs</a></li>
+            <li class="nav-item"><a class="nav-link" href="companies.html">Companies</a></li>
+            <li class="nav-item"><a class="nav-link" href="certificate.html">Certificate</a></li>
+            
+            <li class="nav-item"><a class="nav-link" href="join.html">Join</a></li>
+            <li class="nav-item"><a class="nav-link" href="service.html">Service</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          </ul>
+          <div class="ms-lg-3 mt-3 mt-lg-0">
+            <a href="join.html" class="btn btn-apply-header">APPLY NOW</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Page Banner -->
+  <section class="py-4 text-center" style="background-color: #e8f4e6;">
+    <div class="container py-2">
+      <small class="text-muted text-uppercase fw-semibold" style="letter-spacing: 1px;">Job Report</small>
+      <h1 class="fw-bold text-dark mb-0 mt-1" id="singleJobPageHeaderTitle">All New and Update Jobs Section</h1>
+    </div>
+  </section>
+
+  <!-- Main 3-Column Layout Section -->
+  <section class="py-4">
+    <div class="container">
+      <div class="row g-4">
+        
+        <!-- LEFT COLUMN: Search Filter Widget (col-lg-3) -->
+        <div class="col-lg-3">
+          <div class="card border-0 shadow-sm rounded-4 p-4 sticky-top" style="top: 100px; z-index: 10;">
+            <h5 class="fw-bold mb-3 text-dark">Search Your Dream Jobs</h5>
+            
+            <!-- Keyword Input -->
+            <div class="mb-3">
+              <input type="text" id="jobSearchInput" class="form-control form-control-md rounded-3" placeholder="Keyword...">
+            </div>
+
+            <!-- Location Input -->
+            <div class="mb-3">
+              <input type="text" id="locationSearchInput" class="form-control form-control-md rounded-3" placeholder="Location...">
+            </div>
+
+            <!-- Sector Select -->
+            <div class="mb-4">
+              <select id="sectorSelect" class="form-select form-select-md rounded-3">
+                <option value="all">Category...</option>
+                <option value="logistics">Logistics & Driver</option>
+                <option value="supermarket">Retail & Supermarket</option>
+                <option value="banking">Banking & ATM</option>
+                <option value="pharmacy">Pharmacy & Healthcare</option>
+                <option value="security">Security & Guard</option>
+                <option value="backoffice">Back Office & Admin</option>
+                <option value="airlines">Airlines & Aviation</option>
+                <option value="auto">Automobile & Technical</option>
+              </select>
+            </div>
+
+            <!-- Search Button -->
+            <button type="button" id="btnFilterSubmit" class="btn btn-dark w-100 rounded-pill py-2 fw-bold" onclick="filterJobsFeed()">
+              Search
+            </button>
+            
+            <a href="jobs.html" class="btn btn-link text-muted btn-sm w-100 mt-2 text-decoration-none text-center d-block">
+              ← Back to All Categories
+            </a>
+          </div>
+        </div>
+
+        <!-- CENTER COLUMN: Selected Job Details + Other Jobs Feed (col-lg-6) -->
+        <div class="col-lg-6">
+          
+          <!-- Section Header -->
+          <div class="mb-3">
+            <h5 class="fw-bold text-dark mb-0" id="mainFeedHeaderTitle">6 All New and Update Jobs Section Jobs</h5>
+          </div>
+
+          <!-- DYNAMIC FEATURED SELECTED JOB DETAILS CARD -->
+          <div class="card border-0 shadow-sm rounded-4 overflow-hidden bg-white mb-5" id="featuredJobCard">
+            <!-- Poster Graphic Top -->
+            <div class="position-relative">
+              <img id="featuredJobImage" src="assets/images/posters/snapdeal_poster.svg" alt="Selected Job Poster" class="img-fluid w-100 job-poster-img" style="aspect-ratio: 16 / 9; object-fit: cover;">
+            </div>
+
+            <!-- Content Area -->
+            <div class="p-4">
+              <div class="d-flex align-items-center gap-3 mb-2">
+                <img src="assets/images/logo.png" alt="Logo" style="width: 38px; height: 38px; object-fit: contain;">
+                <div>
+                  <h3 class="fw-bold text-dark mb-0 fs-4" id="featuredJobTitle">Job Opening Snapdeal Delivery Partner</h3>
+                  <small class="text-muted" id="featuredJobCompany">Snapdeal Logistics Partner • Kolkata, Barddhaman</small>
+                </div>
+              </div>
+
+              <div class="d-flex flex-wrap align-items-center gap-2 my-3">
+                <span class="badge bg-success-subtle text-success border border-success fw-bold px-3 py-2 fs-6" id="featuredJobSalary">₹ 22,000 / mo</span>
+                <span class="badge bg-light text-dark border px-3 py-2" id="featuredJobQualification">5th / 8th Pass</span>
+                <span class="badge bg-light text-dark border px-3 py-2">100% FREE PLACEMENT</span>
+              </div>
+
+              <div class="my-3 text-secondary" id="featuredJobDescription">
+                <p>Driver and delivery executive positions available across Barddhaman & Kolkata regions. Direct route delivery with weekly incentives.</p>
+                <ul class="ps-3 mb-2">
+                  <li><strong>Job Duties:</strong> E-commerce parcel sorting, daily route delivery, cash collection balancing.</li>
+                  <li><strong>Eligibility:</strong> Minimum 5th pass candidates eligible. Driving license or Bike preferred.</li>
+                  <li><strong>Benefits:</strong> Weekly fuel allowance, performance bonus, PF & ESIC health benefits.</li>
+                  <li><strong>Interview:</strong> Direct spot joining. No placement fee or hidden charges.</li>
+                </ul>
+              </div>
+
+              <div class="d-flex align-items-center justify-content-between pt-3 border-top mt-3">
+                <button type="button" class="btn btn-outline-secondary rounded-pill btn-sm px-4 fw-bold" id="btnShareFeatured">
+                  <i class="fas fa-share-alt me-1"></i> Share
+                </button>
+                <button type="button" class="btn btn-teal text-white rounded-pill btn-sm px-4 fw-bold" style="background-color: var(--primary-teal);" id="btnApplyFeatured">
+                  APPLY NOW
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- OTHER AVAILABLE JOBS SECTION -->
+          <div class="mt-4">
+            <h5 class="fw-bold text-dark mb-3"><i class="fas fa-briefcase text-success me-2"></i> Other Available Jobs</h5>
+            
+            <div class="d-flex flex-column gap-4" id="otherJobsContainer">
+
+              <!-- OTHER JOB CARD 1: Registration Form -->
+              <div class="card border-0 shadow-sm rounded-4 overflow-hidden bg-white other-job-item">
+                <div class="position-relative">
+                  <img src="assets/images/posters/registration_poster.svg" alt="Registration Form" class="img-fluid w-100 job-poster-img" style="aspect-ratio: 16 / 9; object-fit: cover;">
+                </div>
+                <div class="p-4">
+                  <div class="d-flex align-items-center gap-3 mb-2">
+                    <img src="assets/images/logo.png" alt="Logo" style="width: 32px; height: 32px; object-fit: contain;">
+                    <div>
+                      <h4 class="fw-bold text-dark mb-0 fs-5 cursor-pointer" onclick="loadJobDetails('job-2')">REGISTRATION FORM FOR ALL JOB</h4>
+                      <small class="text-muted">Advine 360 Career Solutions • All Over West Bengal</small>
+                    </div>
+                  </div>
+                  <div class="d-flex align-items-center gap-2 my-2">
+                    <span class="badge bg-success-subtle text-success border border-success fw-bold px-3 py-2 fs-6">₹ 12,000 TO 14,000</span>
+                    <span class="badge bg-light text-dark border px-3 py-2">10th / 12th Pass</span>
+                  </div>
+                  <p class="text-muted small my-2">Single registration for multiple job vacancies across 50+ partner companies. Direct placement updates on WhatsApp.</p>
+                  <div class="d-flex align-items-center justify-content-between pt-3 border-top mt-3">
+                    <button type="button" class="btn btn-outline-secondary rounded-pill btn-sm px-3 fw-bold" onclick="shareJob('REGISTRATION FORM FOR ALL JOB', 'Register 100% free for jobs!')">
+                      <i class="fas fa-share-alt me-1"></i> Share
+                    </button>
+                    <button type="button" class="btn btn-teal text-white rounded-pill btn-sm px-4 fw-bold" style="background-color: var(--primary-teal);" onclick="openApplyModal('REGISTRATION FORM FOR ALL JOB', 'Advine 360 Career Solutions')">
+                      APPLY NOW
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- OTHER JOB CARD 2: More Supermarket Assistant -->
+              <div class="card border-0 shadow-sm rounded-4 overflow-hidden bg-white other-job-item">
+                <div class="position-relative">
+                  <img src="assets/images/posters/supermarket_poster.svg" alt="More Supermarket" class="img-fluid w-100 job-poster-img" style="aspect-ratio: 16 / 9; object-fit: cover;">
+                </div>
+                <div class="p-4">
+                  <div class="d-flex align-items-center gap-3 mb-2">
+                    <img src="assets/images/logo.png" alt="Logo" style="width: 32px; height: 32px; object-fit: contain;">
+                    <div>
+                      <h4 class="fw-bold text-dark mb-0 fs-5 cursor-pointer" onclick="loadJobDetails('job-3')">STORE ASSISTANT (More Supermarket)</h4>
+                      <small class="text-muted">More Supermarket Retail • Purba Barddhaman</small>
+                    </div>
+                  </div>
+                  <div class="d-flex align-items-center gap-2 my-2">
+                    <span class="badge bg-success-subtle text-success border border-success fw-bold px-3 py-2 fs-6">₹ 15,000 / mo</span>
+                    <span class="badge bg-light text-dark border px-3 py-2">Full Time & Part Time</span>
+                  </div>
+                  <p class="text-muted small my-2">Assist store customers, manage counter billing, product display stacking, and store inventory control.</p>
+                  <div class="d-flex align-items-center justify-content-between pt-3 border-top mt-3">
+                    <button type="button" class="btn btn-outline-secondary rounded-pill btn-sm px-3 fw-bold" onclick="shareJob('STORE ASSISTANT', 'Supermarket jobs in Barddhaman!')">
+                      <i class="fas fa-share-alt me-1"></i> Share
+                    </button>
+                    <button type="button" class="btn btn-teal text-white rounded-pill btn-sm px-4 fw-bold" style="background-color: var(--primary-teal);" onclick="openApplyModal('STORE ASSISTANT (More Supermarket)', 'More Supermarket Retail')">
+                      APPLY NOW
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- OTHER JOB CARD 3: ATM Cash Refilling -->
+              <div class="card border-0 shadow-sm rounded-4 overflow-hidden bg-white other-job-item">
+                <div class="position-relative">
+                  <img src="assets/images/posters/atm_poster.svg" alt="ATM Cash Refilling" class="img-fluid w-100 job-poster-img" style="aspect-ratio: 16 / 9; object-fit: cover;">
+                </div>
+                <div class="p-4">
+                  <div class="d-flex align-items-center gap-3 mb-2">
+                    <img src="assets/images/logo.png" alt="Logo" style="width: 32px; height: 32px; object-fit: contain;">
+                    <div>
+                      <h4 class="fw-bold text-dark mb-0 fs-5 cursor-pointer" onclick="loadJobDetails('job-4')">ATM Cash Refilling Officer</h4>
+                      <small class="text-muted">CMS Banking Security • Barddhaman, Kolkata</small>
+                    </div>
+                  </div>
+                  <div class="d-flex align-items-center gap-2 my-2">
+                    <span class="badge bg-success-subtle text-success border border-success fw-bold px-3 py-2 fs-6">₹ 18,000 / mo</span>
+                    <span class="badge bg-light text-dark border px-3 py-2">Direct Joining</span>
+                  </div>
+                  <p class="text-muted small my-2">Responsible for bank ATM cash loading, vault balancing, and custodian duties across assigned routes.</p>
+                  <div class="d-flex align-items-center justify-content-between pt-3 border-top mt-3">
+                    <button type="button" class="btn btn-outline-secondary rounded-pill btn-sm px-3 fw-bold" onclick="shareJob('ATM Cash Refilling Officer', 'ATM cash custodian jobs!')">
+                      <i class="fas fa-share-alt me-1"></i> Share
+                    </button>
+                    <button type="button" class="btn btn-teal text-white rounded-pill btn-sm px-4 fw-bold" style="background-color: var(--primary-teal);" onclick="openApplyModal('ATM Cash Refilling Officer', 'CMS Banking Security')">
+                      APPLY NOW
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- OTHER JOB CARD 4: Apollo Pharmacy -->
+              <div class="card border-0 shadow-sm rounded-4 overflow-hidden bg-white other-job-item">
+                <div class="position-relative">
+                  <img src="assets/images/posters/apollo_poster.svg" alt="Apollo Pharmacy" class="img-fluid w-100 job-poster-img" style="aspect-ratio: 16 / 9; object-fit: cover;">
+                </div>
+                <div class="p-4">
+                  <div class="d-flex align-items-center gap-3 mb-2">
+                    <img src="assets/images/logo.png" alt="Logo" style="width: 32px; height: 32px; object-fit: contain;">
+                    <div>
+                      <h4 class="fw-bold text-dark mb-0 fs-5 cursor-pointer" onclick="loadJobDetails('job-5')">Pharmacy Assistant / Trainee</h4>
+                      <small class="text-muted">Apollo Pharmacies Limited • Purba Barddhaman</small>
+                    </div>
+                  </div>
+                  <div class="d-flex align-items-center gap-2 my-2">
+                    <span class="badge bg-success-subtle text-success border border-success fw-bold px-3 py-2 fs-6">₹ 15,000 - ₹ 20,000</span>
+                    <span class="badge bg-light text-dark border px-3 py-2">Urgent Hiring</span>
+                  </div>
+                  <p class="text-muted small my-2">Assist in medicine dispensing, counter sales, stock inventory, and customer guidance.</p>
+                  <div class="d-flex align-items-center justify-content-between pt-3 border-top mt-3">
+                    <button type="button" class="btn btn-outline-secondary rounded-pill btn-sm px-3 fw-bold" onclick="shareJob('Pharmacy Assistant', 'Apollo Pharmacy jobs in Barddhaman!')">
+                      <i class="fas fa-share-alt me-1"></i> Share
+                    </button>
+                    <button type="button" class="btn btn-teal text-white rounded-pill btn-sm px-4 fw-bold" style="background-color: var(--primary-teal);" onclick="openApplyModal('Pharmacy Assistant', 'Apollo Pharmacies Limited')">
+                      APPLY NOW
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- OTHER JOB CARD 5: Escort Guard -->
+              <div class="card border-0 shadow-sm rounded-4 overflow-hidden bg-white other-job-item">
+                <div class="position-relative">
+                  <img src="assets/images/posters/escort_poster.svg" alt="Escort Guard" class="img-fluid w-100 job-poster-img" style="aspect-ratio: 16 / 9; object-fit: cover;">
+                </div>
+                <div class="p-4">
+                  <div class="d-flex align-items-center gap-3 mb-2">
+                    <img src="assets/images/logo.png" alt="Logo" style="width: 32px; height: 32px; object-fit: contain;">
+                    <div>
+                      <h4 class="fw-bold text-dark mb-0 fs-5 cursor-pointer" onclick="loadJobDetails('job-6')">Escort Guard / Railway Goods Guard</h4>
+                      <small class="text-muted">Escort Security & Logistics • Barddhaman & Asansol</small>
+                    </div>
+                  </div>
+                  <div class="d-flex align-items-center gap-2 my-2">
+                    <span class="badge bg-success-subtle text-success border border-success fw-bold px-3 py-2 fs-6">₹ 18,000 / mo</span>
+                    <span class="badge bg-light text-dark border px-3 py-2">Free Food & Lodging</span>
+                  </div>
+                  <p class="text-muted small my-2">Security escort guard for cargo trains and industrial goods transport. Free fooding and lodging provided.</p>
+                  <div class="d-flex align-items-center justify-content-between pt-3 border-top mt-3">
+                    <button type="button" class="btn btn-outline-secondary rounded-pill btn-sm px-3 fw-bold" onclick="shareJob('Escort Guard', 'Railway goods escort guard job with free fooding & lodging!')">
+                      <i class="fas fa-share-alt me-1"></i> Share
+                    </button>
+                    <button type="button" class="btn btn-teal text-white rounded-pill btn-sm px-4 fw-bold" style="background-color: var(--primary-teal);" onclick="openApplyModal('Escort Guard', 'Escort Security & Logistics')">
+                      APPLY NOW
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <!-- RIGHT COLUMN: Stay Connected Widget (col-lg-3) -->
+        <div class="col-lg-3">
+          <div class="card border-0 shadow-sm rounded-4 p-4 sticky-top text-center" style="top: 100px; z-index: 10;">
+            <div class="bg-success-subtle text-success p-3 rounded-circle d-inline-flex mx-auto mb-3" style="width: 60px; height: 60px; align-items: center; justify-content: center;">
+              <i class="fas fa-paper-plane fa-2x"></i>
+            </div>
+            <h5 class="fw-bold text-dark mb-2">Stay connected with your job process</h5>
+            <p class="text-muted small mb-4">Get instant free job alerts, candidate registration status & interview updates directly on WhatsApp or Email.</p>
+            <a href="https://wa.me/917001420469?text=Hello%20Bright%20Future%20Consultancy%2C%20I%20want%20to%20subscribe%20to%20job%20alerts." class="btn btn-danger w-100 rounded-pill py-2 fw-bold" target="_blank">
+              Subscribe Now
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Support Email Section -->
+  <section class="py-5 text-center bg-white border-top border-bottom">
+    <div class="container py-2">
+      <h3 class="fw-bold text-dark mb-2">How can we help you today? Send a message at</h3>
+      <a href="mailto:brightfutureconsultancybwn@gmail.com" class="fs-4 text-decoration-underline fw-bold text-dark">
+        brightfutureconsultancybwn@gmail.com
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <a href="index.html" class="d-inline-block mb-3">
+            <img src="assets/images/logo.png" alt="Bright Future Consultancy" class="footer-brand-logo">
+          </a>
+          <p class="text-white-50">
+            Bright Future Consultancy is a premier HR and educational consulting agency in Barddhaman, West Bengal. Providing 100% free job updates and manpower solutions. Est. 2018.
+          </p>
+          <div class="social-icons">
+            <a href="https://wa.me/917001420469" class="social-icon" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-6">
+          <h5 class="footer-title text-white fw-bold mb-3">Company</h5>
+          <ul class="footer-links list-unstyled">
+            <li><a href="jobs.html" class="text-white-50 text-decoration-none">Apply A Job</a></li>
+            
+            <li><a href="service.html" class="text-white-50 text-decoration-none">Our Services</a></li>
+            <li><a href="contact.html" class="text-white-50 text-decoration-none">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-6">
+          <h5 class="footer-title text-white fw-bold mb-3">Support</h5>
+          <ul class="footer-links list-unstyled">
+            <li><a href="certificate.html" class="text-white-50 text-decoration-none">ISO Certificate</a></li>
+            <li><a href="join.html" class="text-white-50 text-decoration-none">Candidate Registration</a></li>
+            <li><a href="companies.html" class="text-white-50 text-decoration-none">Companies</a></li>
+            <li><a href="contact.html" class="text-white-50 text-decoration-none">Support Ticket</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <h5 class="footer-title text-white fw-bold mb-3">Subscribe to newsletter</h5>
+          <p class="text-white-50 small mb-3">Action to get new vacancy and job news in your inbox.</p>
+          <div class="input-group">
+            <input type="email" class="form-control rounded-start-pill border-0" placeholder="Enter your email">
+            <button class="btn btn-teal text-white rounded-end-pill px-4" style="background-color: var(--primary-teal);"><i class="fas fa-paper-plane"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-top border-secondary mt-5 pt-4 text-center">
+        <p class="text-white-50 small mb-0">&copy; <span class="current-year">2026</span> Bright Future Consultancy. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+        <!-- Share Link Modal (Matching Reference Image 2) -->
+    <!-- Share Link Modal (Matching Reference Image 2) -->
+  <div class="modal fade" id="shareModal" tabindex="-1" aria-labelledby="shareModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content share-modal-content" style="background-color: #282b36 !important; color: #ffffff !important; border-radius: 16px !important; border: 1px solid #3f4452 !important;">
+        <!-- Header -->
+        <div class="modal-header share-modal-header border-0 d-flex justify-content-between align-items-center" style="background-color: #282b36 !important; border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;">
+          <div class="d-flex align-items-center gap-2">
+            <i class="fas fa-external-link-alt text-light fs-5"></i>
+            <h5 class="modal-title fw-bold text-white mb-0" id="shareModalLabel">Share link</h5>
+          </div>
+          <div class="d-flex align-items-center gap-2">
+            <div class="contact-avatar-img" style="width: 32px; height: 32px; font-size: 0.85rem; background: #3f4452; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+              <i class="fas fa-user"></i>
+            </div>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+        </div>
+
+        <!-- Modal Body -->
+        <div class="modal-body p-4" style="background-color: #282b36 !important; color: #ffffff !important;">
+          <!-- URL Input Row -->
+          <div class="share-url-box mb-4" style="background-color: #1e2029 !important; border: 1px solid #3f4452 !important; border-radius: 12px !important; padding: 10px 14px !important; display: flex; align-items: center; gap: 10px;">
+            <i class="fas fa-link text-white-50 fs-5"></i>
+            <input type="text" class="share-url-input" id="shareUrlInput" readonly value="" placeholder="https://brightfutureconsultancy.com/jobs.html" style="background: transparent !important; border: none !important; color: #ffffff !important; font-size: 0.9rem !important; width: 100%;">
+            <button type="button" class="share-icon-btn" id="btnQrCode" title="Show QR Code" onclick="toggleQrCode()" style="background: rgba(255,255,255,0.15) !important; border: none !important; color: #fff !important; width: 36px; height: 36px; border-radius: 8px !important; display: flex; align-items: center; justify-content: center;">
+              <i class="fas fa-qrcode"></i>
+            </button>
+            <button type="button" class="share-icon-btn" title="Copy Link" onclick="copyShareLink()" style="background: rgba(255,255,255,0.15) !important; border: none !important; color: #fff !important; width: 36px; height: 36px; border-radius: 8px !important; display: flex; align-items: center; justify-content: center;">
+              <i class="fas fa-copy"></i>
+            </button>
+          </div>
+
+          <!-- QR Code Container -->
+          <div id="qrCodeContainer" class="text-center py-3 d-none mb-4 bg-white rounded-3 p-3">
+            <img id="qrCodeImg" src="" alt="QR Code" style="max-width: 160px; height: auto;">
+            <p class="text-dark small mb-0 mt-2 fw-semibold">Scan QR code to open job link</p>
+          </div>
+
+          <!-- Direct Contacts Row -->
+          <div class="d-flex align-items-center gap-4 overflow-x-auto pb-3 mb-4 border-bottom border-secondary border-opacity-25">
+            <div class="contact-avatar-box" onclick="shareDirectContact('Simran Shikh', 'email')" style="min-width: 80px; text-align: center; cursor: pointer;">
+              <div class="contact-avatar-img mx-auto" style="width: 52px; height: 52px; border-radius: 50%; background: #3f4452; color: #fff; font-weight: 700; display: flex; align-items: center; justify-content: center; position: relative;">
+                SS
+                <div class="contact-badge-icon bg-danger" style="position: absolute; bottom: -2px; right: -2px; width: 22px; height: 22px; border-radius: 50%; font-size: 11px; display: flex; align-items: center; justify-content: center; border: 2px solid #282b36; color: #fff;"><i class="fas fa-envelope"></i></div>
+              </div>
+              <small class="text-white-50 mt-2 d-block" style="font-size: 0.72rem; line-height: 1.2;">Simran Shikh<br>(You)</small>
+            </div>
+
+            <div class="contact-avatar-box" onclick="shareDirectContact('Outlook', 'outlook')" style="min-width: 80px; text-align: center; cursor: pointer;">
+              <div class="contact-avatar-img mx-auto" style="width: 52px; height: 52px; border-radius: 50%; background: #3f4452; color: #fff; font-weight: 700; display: flex; align-items: center; justify-content: center; position: relative;">
+                O
+                <div class="contact-badge-icon bg-primary" style="position: absolute; bottom: -2px; right: -2px; width: 22px; height: 22px; border-radius: 50%; font-size: 11px; display: flex; align-items: center; justify-content: center; border: 2px solid #282b36; color: #fff;"><i class="fas fa-envelope-open"></i></div>
+              </div>
+              <small class="text-white-50 mt-2 d-block" style="font-size: 0.72rem; line-height: 1.2;">outlook_6B9C2...<br>6F96D39ED2...</small>
+            </div>
+
+            <div class="contact-avatar-box" onclick="shareDirectContact('918597463323', 'whatsapp')" style="min-width: 80px; text-align: center; cursor: pointer;">
+              <div class="contact-avatar-img mx-auto" style="width: 52px; height: 52px; border-radius: 50%; background: #3f4452; color: #fff; font-weight: 700; display: flex; align-items: center; justify-content: center; position: relative;">
+                <img src="assets/images/team/manirul.svg" alt="Contact" class="w-100 h-100 rounded-circle" style="object-fit: cover;">
+                <div class="contact-badge-icon bg-success" style="position: absolute; bottom: -2px; right: -2px; width: 22px; height: 22px; border-radius: 50%; font-size: 11px; display: flex; align-items: center; justify-content: center; border: 2px solid #282b36; color: #fff;"><i class="fab fa-whatsapp"></i></div>
+              </div>
+              <small class="text-white-50 mt-2 d-block" style="font-size: 0.72rem; line-height: 1.2;">+91 85974<br>63323</small>
+            </div>
+
+            <div class="contact-avatar-box" onclick="shareDirectContact('918697629432', 'whatsapp')" style="min-width: 80px; text-align: center; cursor: pointer;">
+              <div class="contact-avatar-img mx-auto" style="width: 52px; height: 52px; border-radius: 50%; background: #3f4452; color: #fff; font-weight: 700; display: flex; align-items: center; justify-content: center; position: relative;">
+                <i class="fas fa-user text-white-50"></i>
+                <div class="contact-badge-icon bg-success" style="position: absolute; bottom: -2px; right: -2px; width: 22px; height: 22px; border-radius: 50%; font-size: 11px; display: flex; align-items: center; justify-content: center; border: 2px solid #282b36; color: #fff;"><i class="fab fa-whatsapp"></i></div>
+              </div>
+              <small class="text-white-50 mt-2 d-block" style="font-size: 0.72rem; line-height: 1.2;">+91 86976<br>29432</small>
+            </div>
+
+            <div class="contact-avatar-box" onclick="shareDirectContact('919332601587', 'whatsapp')" style="min-width: 80px; text-align: center; cursor: pointer;">
+              <div class="contact-avatar-img mx-auto" style="width: 52px; height: 52px; border-radius: 50%; background: #3f4452; color: #fff; font-weight: 700; display: flex; align-items: center; justify-content: center; position: relative;">
+                <img src="assets/images/team/hafijur.svg" alt="Contact" class="w-100 h-100 rounded-circle" style="object-fit: cover;">
+                <div class="contact-badge-icon bg-success" style="position: absolute; bottom: -2px; right: -2px; width: 22px; height: 22px; border-radius: 50%; font-size: 11px; display: flex; align-items: center; justify-content: center; border: 2px solid #282b36; color: #fff;"><i class="fab fa-whatsapp"></i></div>
+              </div>
+              <small class="text-white-50 mt-2 d-block" style="font-size: 0.72rem; line-height: 1.2;">+91 93326<br>01587</small>
+            </div>
+          </div>
+
+          <!-- Share Using Platforms Grid -->
+          <h6 class="fw-bold text-white mb-3" style="font-size: 0.95rem;">Share using</h6>
+          
+          <div class="row g-2 text-center">
+            <!-- 1. Nearby Sharing -->
+            <div class="col-4 col-sm-3 col-md-2">
+              <a href="javascript:void(0)" class="share-platform-item" onclick="triggerNativeShare()" style="color: #e2e8f0 !important; text-decoration: none !important;">
+                <div class="share-platform-icon-box text-info" style="width: 48px; height: 48px; border-radius: 14px; background: #1e2029; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin: 0 auto 6px;">
+                  <i class="fas fa-rss-square"></i>
+                </div>
+                <small style="font-size: 0.78rem;">Nearby Sharing</small>
+              </a>
+            </div>
+
+            <!-- 2. Facebook -->
+            <div class="col-4 col-sm-3 col-md-2">
+              <a href="#" id="shareFb" target="_blank" class="share-platform-item" style="color: #e2e8f0 !important; text-decoration: none !important;">
+                <div class="share-platform-icon-box text-primary" style="width: 48px; height: 48px; border-radius: 14px; background: #1e2029; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin: 0 auto 6px;">
+                  <i class="fab fa-facebook"></i>
+                </div>
+                <small style="font-size: 0.78rem;">Facebook</small>
+              </a>
+            </div>
+
+            <!-- 3. Gmail -->
+            <div class="col-4 col-sm-3 col-md-2">
+              <a href="#" id="shareGmail" target="_blank" class="share-platform-item" style="color: #e2e8f0 !important; text-decoration: none !important;">
+                <div class="share-platform-icon-box text-danger" style="width: 48px; height: 48px; border-radius: 14px; background: #1e2029; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin: 0 auto 6px;">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <small style="font-size: 0.78rem;">Gmail</small>
+              </a>
+            </div>
+
+            <!-- 4. Copilot -->
+            <div class="col-4 col-sm-3 col-md-2">
+              <a href="javascript:void(0)" class="share-platform-item" onclick="shareCopilot()" style="color: #e2e8f0 !important; text-decoration: none !important;">
+                <div class="share-platform-icon-box" style="width: 48px; height: 48px; border-radius: 14px; background: linear-gradient(135deg, #00c6ff, #0072ff); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin: 0 auto 6px;">
+                  <i class="fas fa-robot"></i>
+                </div>
+                <small style="font-size: 0.78rem;">Copilot</small>
+              </a>
+            </div>
+
+            <!-- 5. Microsoft 365 -->
+            <div class="col-4 col-sm-3 col-md-2">
+              <a href="javascript:void(0)" class="share-platform-item" onclick="shareCopilot()" style="color: #e2e8f0 !important; text-decoration: none !important;">
+                <div class="share-platform-icon-box" style="width: 48px; height: 48px; border-radius: 14px; background: linear-gradient(135deg, #0072ff, #7f00ff); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin: 0 auto 6px;">
+                  <i class="fab fa-microsoft"></i>
+                </div>
+                <small style="font-size: 0.78rem;">Microsoft 365</small>
+              </a>
+            </div>
+
+            <!-- 6. Outlook -->
+            <div class="col-4 col-sm-3 col-md-2">
+              <a href="#" id="shareOutlook" target="_blank" class="share-platform-item" style="color: #e2e8f0 !important; text-decoration: none !important;">
+                <div class="share-platform-icon-box text-primary" style="width: 48px; height: 48px; border-radius: 14px; background: #1e2029; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin: 0 auto 6px;">
+                  <i class="fas fa-envelope-open-text"></i>
+                </div>
+                <small style="font-size: 0.78rem;">Outlook</small>
+              </a>
+            </div>
+
+            <!-- 7. WhatsApp -->
+            <div class="col-4 col-sm-3 col-md-2">
+              <a href="#" id="shareWa" target="_blank" class="share-platform-item" style="color: #e2e8f0 !important; text-decoration: none !important;">
+                <div class="share-platform-icon-box text-success" style="width: 48px; height: 48px; border-radius: 14px; background: #1e2029; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin: 0 auto 6px;">
+                  <i class="fab fa-whatsapp"></i>
+                </div>
+                <small style="font-size: 0.78rem;">WhatsApp</small>
+              </a>
+            </div>
+
+            <!-- 8. Twitter / X -->
+            <div class="col-4 col-sm-3 col-md-2">
+              <a href="#" id="shareTw" target="_blank" class="share-platform-item" style="color: #e2e8f0 !important; text-decoration: none !important;">
+                <div class="share-platform-icon-box text-light" style="width: 48px; height: 48px; border-radius: 14px; background: #1e2029; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin: 0 auto 6px;">
+                  <i class="fab fa-x-twitter"></i>
+                </div>
+                <small style="font-size: 0.78rem;">Twitter</small>
+              </a>
+            </div>
+
+            <!-- 9. LinkedIn -->
+            <div class="col-4 col-sm-3 col-md-2">
+              <a href="#" id="shareLinkedin" target="_blank" class="share-platform-item" style="color: #e2e8f0 !important; text-decoration: none !important;">
+                <div class="share-platform-icon-box text-info" style="width: 48px; height: 48px; border-radius: 14px; background: #1e2029; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin: 0 auto 6px;">
+                  <i class="fab fa-linkedin"></i>
+                </div>
+                <small style="font-size: 0.78rem;">LinkedIn</small>
+              </a>
+            </div>
+
+            <!-- 10. Telegram -->
+            <div class="col-4 col-sm-3 col-md-2">
+              <a href="#" id="shareTg" target="_blank" class="share-platform-item" style="color: #e2e8f0 !important; text-decoration: none !important;">
+                <div class="share-platform-icon-box text-info" style="width: 48px; height: 48px; border-radius: 14px; background: #1e2029; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin: 0 auto 6px;">
+                  <i class="fab fa-telegram-plane"></i>
+                </div>
+                <small style="font-size: 0.78rem;">Telegram</small>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+      </div>
+    </div>
+  </div>
+      </div>
+    </div>
+  </div>
+      </div>
+    </div>
+  </div>
+      </div>
+    </div>
+  </div>
+    </div>
+  </div>
+
+  <!-- Job Application Modal -->
+  <div class="modal fade" id="applicationModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content rounded-4 border-0 shadow">
+        <div class="modal-header border-0 pb-0">
+          <h5 class="modal-title fw-bold text-dark"><i class="fas fa-file-alt text-success me-2"></i> <span id="appModalTitle">Job Application</span></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4">
+          <p class="text-muted small mb-3" id="appModalCompany">Bright Future Consultancy Placement Cell</p>
+          <form id="jobAppModalForm">
+            <input type="hidden" id="appTargetJob">
+            
+            <div class="mb-3">
+              <label for="modalApplicantName" class="form-label small fw-semibold">Full Name *</label>
+              <input type="text" id="modalApplicantName" class="form-control rounded-3" placeholder="Enter your name" required>
+            </div>
+            
+            <div class="mb-3">
+              <label for="modalApplicantPhone" class="form-label small fw-semibold">WhatsApp Phone Number *</label>
+              <input type="tel" id="modalApplicantPhone" class="form-control rounded-3" placeholder="e.g. 7001420469" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="modalApplicantEmail" class="form-label small fw-semibold">Email Address *</label>
+              <input type="email" id="modalApplicantEmail" class="form-control rounded-3" placeholder="e.g. candidate@gmail.com" required>
+            </div>
+            
+            <div class="mb-3">
+              <label for="modalQualification" class="form-label small fw-semibold">Highest Qualification *</label>
+              <select id="modalQualification" class="form-select rounded-3" required>
+                <option value="">Select Qualification</option>
+                <option value="8th Pass">8th Pass</option>
+                <option value="10th Pass">10th Pass</option>
+                <option value="12th Pass">12th Pass</option>
+                <option value="Diploma / ITI">Diploma / ITI</option>
+                <option value="Graduate / B.Tech">Graduate / B.Tech</option>
+              </select>
+            </div>
+
+            <div class="mb-3">
+              <label for="modalPreferredLocation" class="form-label small fw-semibold">Current City / Location *</label>
+              <input type="text" id="modalPreferredLocation" class="form-control rounded-3" placeholder="e.g. Barddhaman, Kolkata" required>
+            </div>
+
+            <div class="alert alert-success d-none mb-3" id="modalAppSuccessAlert">
+              <i class="fas fa-check-circle me-1"></i> Application submitted! Connecting with Placement Desk on WhatsApp...
+            </div>
+
+            <button type="submit" class="btn btn-teal text-white w-100 rounded-pill py-2 fw-bold" style="background-color: var(--primary-teal);">
+              Submit Application & Connect WhatsApp
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Floating Toast Notification -->
+  <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 1100;">
+    <div id="copyToast" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="d-flex">
+        <div class="toast-body fs-6">
+          <i class="fas fa-check-circle me-2"></i> Link copied to clipboard!
+        </div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating WhatsApp Action Button -->
+  <a href="https://wa.me/917001420469?text=Hello%20Bright%20Future%20Consultancy%2C%20I%20want%20to%20know%20more%20about%20job%20vacancies." class="whatsapp-float" target="_blank" title="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- JS Dependencies -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <!-- Dynamic Job Details Script -->
+  <script>
+        const JOBS_DATABASE = {
+      'job-1': {
+        title: "Job Opening Snapdeal Delivery Partner",
+        company: "Snapdeal Logistics Partner • Kolkata, Barddhaman",
+        salary: "₹ 22,000 / mo",
+        qualification: "5th / 8th Pass",
+        image: "assets/images/posters/snapdeal_poster.svg",
+        description: `
+          <p>Snapdeal logistics partner is hiring delivery partners and drivers for daily parcel delivery routes in Barddhaman town and surrounding Kolkata areas.</p>
+          <ul class="ps-3 mb-2">
+            <li><strong>Key Responsibilities:</strong> Pick up delivery parcels from logistics hub, route planning, timely doorstep delivery, and cash-on-delivery handling.</li>
+            <li><strong>Eligibility & Qualification:</strong> Candidates with 5th, 8th or 10th pass qualification are welcome. Driving license or Commercial Badge preferred.</li>
+            <li><strong>Benefits:</strong> ₹22,000 monthly fixed salary + fuel allowance + performance incentives + ESIC medical coverage.</li>
+            <li><strong>Placement Fee:</strong> 100% Free placement with zero registration charge or hidden fee.</li>
+          </ul>
+        `
+      },
+      'job-2': {
+        title: "REGISTRATION FORM FOR ALL JOBS",
+        company: "Bright Future Consultancy • All Over West Bengal",
+        salary: "₹ 12,000 TO 35,000",
+        qualification: "10th / 12th / Graduate Pass",
+        image: "assets/images/posters/registration_poster.svg",
+        description: `
+          <p>One-time candidate registration for multiple job openings across 50+ corporate partner companies in Barddhaman, Kolkata, Durgapur and Howrah.</p>
+          <ul class="ps-3 mb-2">
+            <li><strong>Available Roles:</strong> Back Office Assistant, Data Entry Operator, Retail Sales Executive, Supermarket Helper, Security Guard & Field Executive.</li>
+            <li><strong>Eligibility:</strong> Freshers & experienced 10th, 12th pass & Graduates.</li>
+            <li><strong>Process:</strong> Submit your details once to receive direct call-letter updates for verified interview drives.</li>
+          </ul>
+        `
+      },
+      'job-3': {
+        title: "STORE ASSISTANT (More Supermarket)",
+        company: "More Supermarket Retail • Purba Barddhaman",
+        salary: "₹ 15,000 / mo",
+        qualification: "Full Time & Part Time",
+        image: "assets/images/posters/supermarket_poster.svg",
+        description: `
+          <p>More Supermarket retail chain is hiring store assistants, counter cashiers, and inventory helpers for their Barddhaman store branch.</p>
+          <ul class="ps-3 mb-2">
+            <li><strong>Key Duties:</strong> Customer assistance, billing counter management, grocery stock shelf stacking, barcode scanning.</li>
+            <li><strong>Salary & Payroll:</strong> ₹15,000 fixed salary on direct company payroll with overtime allowance.</li>
+          </ul>
+        `
+      },
+      'job-4': {
+        title: "ATM Cash Refilling Officer",
+        company: "CMS Banking Security • Barddhaman, Kolkata",
+        salary: "₹ 18,000 / mo",
+        qualification: "10th / 12th Pass",
+        image: "assets/images/posters/atm_poster.svg",
+        description: `
+          <p>Urgent hiring for ATM Cash Custodians and Refilling Officers across private bank ATM routes in Purba Barddhaman and Bankura.</p>
+          <ul class="ps-3 mb-2">
+            <li><strong>Job Role:</strong> Vault cash loading into bank ATMs, ATM cassette auditing, and cash logistics management.</li>
+            <li><strong>Company Payroll:</strong> Direct joining on company payroll with PF, ESIC & insurance benefits.</li>
+          </ul>
+        `
+      },
+      'job-5': {
+        title: "Pharmacy Assistant / Pharmacy Trainee / Retail Pharmacist",
+        company: "Apollo Pharmacies Limited • Purba Barddhaman",
+        salary: "₹ 15,000 - ₹ 20,000",
+        qualification: "D.Pharm / B.Pharm / 10th+",
+        image: "assets/images/posters/apollo_poster.svg",
+        description: `
+          <p>Apollo Pharmacies Limited is conducting urgent spot interviews for pharmacy assistants, trainees, and registered pharmacists.</p>
+          <ul class="ps-3 mb-2">
+            <li><strong>Duties:</strong> Prescription medicine dispensing, inventory stock checking, billing counter management.</li>
+            <li><strong>Qualifications:</strong> D.Pharm, B.Pharm, or 10th/12th pass with medical store experience.</li>
+          </ul>
+        `
+      },
+      'job-6': {
+        title: "Escort Guard / Railway Goods Guard (Company Payroll Job)",
+        company: "Escort Security & Logistics • Barddhaman & Asansol",
+        salary: "₹ 18,000 / mo",
+        qualification: "8th / 10th / 12th Pass",
+        image: "assets/images/posters/escort_poster.svg",
+        description: `
+          <p>Direct spot hiring for cargo train escort guards and industrial goods transport security guards.</p>
+          <ul class="ps-3 mb-2">
+            <li><strong>Highlights:</strong> Free fooding & lodging provided by company. Spot joining letter on interview day.</li>
+            <li><strong>Salary:</strong> ₹18,000 monthly in-hand salary with annual increments.</li>
+          </ul>
+        `
+      },
+
+      // Sector Mappings
+      'all_new': {
+        title: "All New and Update Jobs Section",
+        company: "Bright Future Hiring Partners • West Bengal",
+        salary: "₹ 12,000 - ₹ 35,000",
+        qualification: "10th / 12th / Graduate Pass",
+        image: "assets/images/roles/all_new_jobs.svg",
+        description: `<p>Comprehensive listing of fresh job updates across IT, Banking, Retail, Logistics, Healthcare, and Govt. Contractual sectors in Barddhaman.</p>`
+      },
+      'overseas': {
+        title: "ALL OVERSEAS JOBS (Gulf & Europe Placement)",
+        company: "Overseas Recruitment Partners • UAE & Qatar",
+        salary: "₹ 45,000 - ₹ 90,000",
+        qualification: "ITI / Diploma / Experienced",
+        image: "assets/images/roles/overseas_jobs.svg",
+        description: `<p>Overseas job vacancies for technicians, electricians, drivers, and hotel staff in UAE, Qatar, Saudi Arabia & Europe. Free visa processing assistance.</p>`
+      },
+      'naps': {
+        title: "ALL JOBS VACANCY UNDER NAPS (Govt Apprenticeship)",
+        company: "NAPS Govt Scheme • West Bengal Industries",
+        salary: "₹ 12,000 - ₹ 18,000",
+        qualification: "10th / 12th / ITI Pass",
+        image: "assets/images/roles/naps_jobs.svg",
+        description: `<p>Govt. National Apprenticeship Promotion Scheme (NAPS) vacancies with stipend, official NAPS certificate & direct company absorption.</p>`
+      },
+      'govt': {
+        title: "Govt. Contractual Jobs Section",
+        company: "Govt. Departments & Municipalities",
+        salary: "₹ 16,000 - ₹ 28,000",
+        qualification: "8th / 10th / 12th / Graduate",
+        image: "assets/images/roles/govt_contractual.svg",
+        description: `<p>Govt. contractual staff, computer operator, and office helper posts across West Bengal state government offices.</p>`
+      },
+      'airlines': {
+        title: "AIRLINES SECTOR JOBS (Ground Staff & Cabin Crew)",
+        company: "IndiGo & Aviation Partners • Kolkata Airport",
+        salary: "₹ 25,000 - ₹ 45,000",
+        qualification: "12th Pass / Graduate",
+        image: "assets/images/roles/airlines_jobs.svg",
+        description: `<p>Airlines ground staff, customer service agent, and luggage handling positions available at Kolkata International Airport. 100% free placement assistance.</p>`
+      },
+      'backoffice': {
+        title: "Back Office Sector & Data Entry",
+        company: "Corporate IT & Finance Firms",
+        salary: "₹ 14,000 - ₹ 24,000",
+        qualification: "12th Pass / Graduate",
+        image: "assets/images/roles/backoffice_jobs.svg",
+        description: `<p>Back office executive, MS Excel operator, telecaller, and document verifier positions in Barddhaman & Kolkata.</p>`
+      },
+      'hospitality': {
+        title: "Hospitality & Hotel Jobs Section",
+        company: "Luxury Hotels & Resort Partners",
+        salary: "₹ 15,000 - ₹ 28,000",
+        qualification: "10th / 12th / Hotel Mgmt",
+        image: "assets/images/roles/hospitality_hotel.svg",
+        description: `<p>Front desk reception, steward, chef assistant, and housekeeping posts in Barddhaman & Durgapur hotels.</p>`
+      },
+      'auto': {
+        title: "Automobile Sector (Tata Motors & Suzuki)",
+        company: "Tata Motors & Maruti Suzuki Plants",
+        salary: "₹ 16,000 - ₹ 26,000",
+        qualification: "10th / ITI Fitter / Electrician",
+        image: "assets/images/roles/automobile_jobs.svg",
+        description: `<p>Assembly line technician, fitter, auto electrician, and quality checker jobs in automobile manufacturing units.</p>`
+      },
+      'medical': {
+        title: "Medical Sector & Hospital Staff",
+        company: "Private Hospitals & Diagnostics",
+        salary: "₹ 15,000 - ₹ 30,000",
+        qualification: "Nursing / GNM / Paramedical",
+        image: "assets/images/roles/medical_sector.svg",
+        description: `<p>Nursing staff, OT technician, lab assistant, and hospital receptionist vacancies in top healthcare facilities.</p>`
+      },
+      'banking': {
+        title: "Banking Sector & Financial Services",
+        company: "Axis Bank, HDFC & Private Banks",
+        salary: "₹ 18,000 - ₹ 32,000",
+        qualification: "12th / Graduate Pass",
+        image: "assets/images/roles/banking_sector.svg",
+        description: `<p>Banking assistant, loan officer, phone banking specialist, and ATM operations executive in Barddhaman branches.</p>`
+      },
+      'ac_mechanic': {
+        title: "AC Mechanic & Refrigeration Technician",
+        company: "HVAC & Service Partners",
+        salary: "₹ 16,000 - ₹ 25,000",
+        qualification: "10th / ITI RAC Pass",
+        image: "assets/images/roles/ac_mechanic.svg",
+        description: `<p>AC installation, maintenance technician, compressor repair, and chiller operator jobs across commercial projects.</p>`
+      },
+      'ac_coach': {
+        title: "AC Coach Attender & Railway Staff",
+        company: "Indian Railways Contracting Partner",
+        salary: "₹ 16,500 - ₹ 24,000",
+        qualification: "8th / 10th / 12th Pass",
+        image: "assets/images/roles/ac_coach_attender.svg",
+        description: `<p>AC coach bedroll staff, train attendant, and passenger assistance staff on express train routes.</p>`
+      },
+      'driver': {
+        title: "Driver Jobs (Heavy & Commercial Vehicles)",
+        company: "Logistics & Commercial Fleet Partners",
+        salary: "₹ 18,000 - ₹ 28,000",
+        qualification: "Valid DL / Badge",
+        image: "assets/images/roles/driver_jobs.svg",
+        description: `<p>Commercial vehicle driver, delivery truck driver, personal driver, and ambulance driver posts in Barddhaman.</p>`
+      },
+      'security': {
+        title: "Security Guard & Guarding Forces",
+        company: "SIS Security & Private Agencies",
+        salary: "₹ 14,000 - ₹ 22,000",
+        qualification: "8th / 10th Pass",
+        image: "assets/images/roles/security_guard.svg",
+        description: `<p>Bank security guard, ATM supervisor, industrial site guard, and residential security staff positions.</p>`
+      },
+      'call_centre': {
+        title: "Call Centre & BPO Customer Support",
+        company: "TCS Partner & BPO Centers",
+        salary: "₹ 14,000 - ₹ 22,000",
+        qualification: "10th / 12th Pass",
+        image: "assets/images/roles/call_centre.svg",
+        description: `<p>Inbound customer service, tele-calling, voice process, and chat support openings in Bengali, Hindi & English.</p>`
+      },
+      'housekeeping': {
+        title: "Housekeeping Staff & Facility Helpers",
+        company: "Facility Management Agencies",
+        salary: "₹ 12,000 - ₹ 18,000",
+        qualification: "5th / 8th Pass",
+        image: "assets/images/roles/housekeeping_stuff.svg",
+        description: `<p>Corporate office cleaner, mall housekeeping staff, hospital sanitation staff, and pantry helper vacancies.</p>`
+      },
+      'warehouse': {
+        title: "Warehouse Executive & Logistics Picker",
+        company: "Flipkart & E-Commerce Hubs",
+        salary: "₹ 15,000 - ₹ 23,000",
+        qualification: "10th / 12th Pass",
+        image: "assets/images/roles/warehouse_executive.svg",
+        description: `<p>Warehouse picker, package scanner, loader, inventory supervisor, and dispatch officer jobs at logistics hubs.</p>`
+      },
+      'it_hardware': {
+        title: "IT & Hardware Networking Technician",
+        company: "Hardware Support & Tech Firms",
+        salary: "₹ 16,000 - ₹ 26,000",
+        qualification: "12th / ITI / Diploma Hardware",
+        image: "assets/images/roles/it_hardware.svg",
+        description: `<p>Desktop support engineer, CCTV technician, printer repair specialist, and computer hardware technician posts.</p>`
+      },
+      'labour': {
+        title: "Labour & General Factory Helper",
+        company: "Manufacturing Plants & Warehouses",
+        salary: "₹ 12,000 - ₹ 17,500",
+        qualification: "5th / 8th Pass",
+        image: "assets/images/roles/labour_helper.svg",
+        description: `<p>Factory helper, industrial packer, loading assistant, and general labour vacancies with free room lodging.</p>`
+      }
+    };
+
+    function loadJobFromUrl() {
+      const params = new URLSearchParams(window.location.search);
+      const jobId = params.get('id') || params.get('job');
+      const sectorId = params.get('sector');
+
+      let targetKey = 'job-1'; // Default Snapdeal
+      if (jobId && JOBS_DATABASE[jobId]) {
+        targetKey = jobId;
+      } else if (sectorId && JOBS_DATABASE[sectorId]) {
+        targetKey = sectorId;
+      }
+
+      loadJobDetails(targetKey);
+    }
+
+    function loadJobDetails(key) {
+      const data = JOBS_DATABASE[key] || JOBS_DATABASE['job-1'];
+
+      const img = document.getElementById('featuredJobImage');
+      const title = document.getElementById('featuredJobTitle');
+      const company = document.getElementById('featuredJobCompany');
+      const salary = document.getElementById('featuredJobSalary');
+      const qual = document.getElementById('featuredJobQualification');
+      const desc = document.getElementById('featuredJobDescription');
+      const pageHeader = document.getElementById('singleJobPageHeaderTitle');
+      const mainFeedHeader = document.getElementById('mainFeedHeaderTitle');
+
+      if (img) img.src = data.image;
+      if (title) title.textContent = data.title;
+      if (company) company.textContent = data.company;
+      if (salary) salary.textContent = data.salary;
+      if (qual) qual.textContent = data.qualification;
+      if (desc) desc.innerHTML = data.description;
+      if (pageHeader) pageHeader.textContent = data.title;
+      if (mainFeedHeader) mainFeedHeader.textContent = `Job Details: ${data.title}`;
+
+      const btnShare = document.getElementById('btnShareFeatured');
+      const btnApply = document.getElementById('btnApplyFeatured');
+
+      if (btnShare) {
+        btnShare.onclick = function() {
+          shareJob(data.title, `Job Opportunity: ${data.title} - ${data.salary}. Apply Free!`);
+        };
+      }
+
+      if (btnApply) {
+        btnApply.onclick = function() {
+          openApplyModal(data.title, data.company);
+        };
+      }
+
+      window.scrollTo({ top: 150, behavior: 'smooth' });
+    }
+
+    document.addEventListener('DOMContentLoaded', loadJobFromUrl);
+  </script>
+</body>
+</html>

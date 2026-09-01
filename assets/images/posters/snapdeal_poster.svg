@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="400" viewBox="0 0 700 400">
+  <defs>
+    <linearGradient id="bgSnap" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff0040" />
+      <stop offset="50%" stop-color="#e60039" />
+      <stop offset="100%" stop-color="#990026" />
+    </linearGradient>
+  </defs>
+  <rect width="700" height="400" fill="url(#bgSnap)"/>
+  
+  <!-- Snapdeal Logo Pill Top Left -->
+  <rect x="30" y="25" width="160" height="44" rx="22" fill="#ffffff"/>
+  <text x="110" y="54" font-family="'Outfit', sans-serif" font-weight="900" font-size="22" fill="#e60039" text-anchor="middle">Snapdeal</text>
+  
+  <rect x="210" y="25" width="220" height="44" rx="22" fill="#ffcc00"/>
+  <text x="320" y="54" font-family="'Hind Siliguri', sans-serif" font-weight="bold" font-size="20" fill="#1b1827" text-anchor="middle">অনেক ড্রাইভার নিয়োগ</text>
+  
+  <text x="250" y="125" font-family="'Hind Siliguri', sans-serif" font-weight="900" font-size="34" fill="#ffffff" text-anchor="middle">মোট পদসংখ্যা-200</text>
+  
+  <rect x="80" y="150" width="340" height="50" rx="25" fill="#00b894"/>
+  <text x="250" y="184" font-family="'Hind Siliguri', sans-serif" font-weight="bold" font-size="24" fill="#ffffff" text-anchor="middle">5th পাশেই সুযোগ</text>
+  
+  <text x="250" y="240" font-family="'Outfit', sans-serif" font-weight="900" font-size="32" fill="#ffcc00" text-anchor="middle">বেতন - ₹22,000 /Month</text>
+  <text x="250" y="280" font-family="'Hind Siliguri', sans-serif" font-weight="bold" font-size="24" fill="#ffffff" text-anchor="middle">কোন টাকা লাগবে না</text>
+  
+  <rect x="60" y="305" width="380" height="55" rx="10" fill="#ffffff"/>
+  <text x="250" y="342" font-family="'Hind Siliguri', sans-serif" font-weight="900" font-size="28" fill="#e60039" text-anchor="middle">সরাসরি কাজের জন্য জয়েন লিখুন</text>
+
+  <!-- Delivery Van & Executive Right -->
+  <g transform="translate(470, 70)">
+    <rect x="10" y="80" width="180" height="100" rx="10" fill="#ffffff"/>
+    <rect x="130" y="90" width="50" height="50" rx="5" fill="#0072ff"/>
+    <circle cx="50" cy="180" r="20" fill="#1b1827"/>
+    <circle cx="150" cy="180" r="20" fill="#1b1827"/>
+    <circle cx="50" cy="180" r="8" fill="#ffffff"/>
+    <circle cx="150" cy="180" r="8" fill="#ffffff"/>
+    <text x="70" y="130" font-family="sans-serif" font-size="14" font-weight="bold" fill="#e60039">Snapdeal</text>
+  </g>
+</svg>

@@ -1,0 +1,87 @@
+const fs = require('fs');
+const path = require('path');
+
+const targetDir = path.join(__dirname, '..', 'assets', 'images', 'companies');
+if (!fs.existsSync(targetDir)) {
+  fs.mkdirSync(targetDir, { recursive: true });
+}
+
+const hexCollageSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="500" height="480" viewBox="0 0 500 480">
+  <defs>
+    <pattern id="hexGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 0 20 L 20 0 L 40 20 L 40 40 L 20 40 Z" fill="none" stroke="#e2e8f0" stroke-width="1" opacity="0.6"/>
+    </pattern>
+    <clipPath id="hex1"><polygon points="120,50 180,15 240,50 240,120 180,155 120,120"/></clipPath>
+    <clipPath id="hex2"><polygon points="260,50 320,15 380,50 380,120 320,155 260,120"/></clipPath>
+    <clipPath id="hex3"><polygon points="50,170 110,135 170,170 170,240 110,275 50,240"/></clipPath>
+    <clipPath id="hex4"><polygon points="190,170 250,135 310,170 310,240 250,275 190,240"/></clipPath>
+    <clipPath id="hex5"><polygon points="330,170 390,135 450,170 450,240 390,275 330,240"/></clipPath>
+    <clipPath id="hex6"><polygon points="120,290 180,255 240,290 240,360 180,395 120,360"/></clipPath>
+    <clipPath id="hex7"><polygon points="260,290 320,255 380,290 380,360 320,395 260,360"/></clipPath>
+  </defs>
+
+  <!-- Background Subtle Grid Line Pattern -->
+  <rect width="500" height="480" fill="#f8fafc"/>
+  <rect width="500" height="480" fill="url(#hexGrid)"/>
+
+  <!-- HEXAGON 1: Manufacturing Workers Top Left -->
+  <g>
+    <polygon points="120,50 180,15 240,50 240,120 180,155 120,120" fill="#0A5900"/>
+    <rect x="110" y="10" width="140" height="150" fill="#e8f4e6" clip-path="url(#hex1)"/>
+    <circle cx="180" cy="70" r="30" fill="#0A5900" opacity="0.8" clip-path="url(#hex1)"/>
+    <text x="180" y="110" font-family="sans-serif" font-weight="bold" font-size="11" fill="#0A5900" text-anchor="middle" clip-path="url(#hex1)">PLANT WORK</text>
+  </g>
+
+  <!-- HEXAGON 2: Industrial Assembly Top Right -->
+  <g>
+    <polygon points="260,50 320,15 380,50 380,120 320,155 260,120" fill="#1b1827"/>
+    <rect x="250" y="10" width="140" height="150" fill="#f0f4f8" clip-path="url(#hex2)"/>
+    <circle cx="320" cy="70" r="30" fill="#0072ff" opacity="0.8" clip-path="url(#hex2)"/>
+    <text x="320" y="110" font-family="sans-serif" font-weight="bold" font-size="11" fill="#1b1827" text-anchor="middle" clip-path="url(#hex2)">ASSEMBLY</text>
+  </g>
+
+  <!-- HEXAGON 3: ISO 9001:2015 Certificate Badge Mid Left -->
+  <g>
+    <polygon points="50,170 110,135 170,170 170,240 110,275 50,240" fill="#ffffff" stroke="#0A5900" stroke-width="4"/>
+    <circle cx="110" cy="205" r="42" fill="#e8f4e6"/>
+    <circle cx="110" cy="205" r="36" fill="#0A5900"/>
+    <text x="110" y="200" font-family="sans-serif" font-weight="bold" font-size="12" fill="#ffffff" text-anchor="middle">ISO 9001</text>
+    <text x="110" y="215" font-family="sans-serif" font-size="8" fill="#ffeb3b" text-anchor="middle">CERTIFIED</text>
+  </g>
+
+  <!-- HEXAGON 4: MSME Govt Govt Stamp Center -->
+  <g>
+    <polygon points="190,170 250,135 310,170 310,240 250,275 190,240" fill="#ffffff" stroke="#0072ff" stroke-width="4"/>
+    <rect x="200" y="150" width="100" height="110" fill="#ffffff"/>
+    <text x="250" y="195" font-family="sans-serif" font-weight="bold" font-size="14" fill="#051937" text-anchor="middle">MSME</text>
+    <text x="250" y="212" font-family="sans-serif" font-size="8" fill="#d90429" text-anchor="middle">GOVT OF INDIA</text>
+    <text x="250" y="225" font-family="sans-serif" font-size="7" fill="#666666" text-anchor="middle">REG. WB-11-0035754</text>
+  </g>
+
+  <!-- HEXAGON 5: Electronics / IT Tech Mid Right -->
+  <g>
+    <polygon points="330,170 390,135 450,170 450,240 390,275 330,240" fill="#0A5900"/>
+    <rect x="320" y="130" width="140" height="150" fill="#e8f4e6" clip-path="url(#hex5)"/>
+    <circle cx="390" cy="190" r="30" fill="#0A5900" opacity="0.8" clip-path="url(#hex5)"/>
+    <text x="390" y="230" font-family="sans-serif" font-weight="bold" font-size="11" fill="#0A5900" text-anchor="middle" clip-path="url(#hex5)">IT TECH</text>
+  </g>
+
+  <!-- HEXAGON 6: Construction / Safety Helmet Bottom Left -->
+  <g>
+    <polygon points="120,290 180,255 240,290 240,360 180,395 120,360" fill="#ff9900"/>
+    <rect x="110" y="250" width="140" height="150" fill="#fff3e0" clip-path="url(#hex6)"/>
+    <circle cx="180" cy="310" r="30" fill="#ff9900" clip-path="url(#hex6)"/>
+    <text x="180" y="350" font-family="sans-serif" font-weight="bold" font-size="11" fill="#e65100" text-anchor="middle" clip-path="url(#hex6)">SAFETY</text>
+  </g>
+
+  <!-- HEXAGON 7: Handicraft / Hotel Staff Bottom Right -->
+  <g>
+    <polygon points="260,290 320,255 380,290 380,360 320,395 260,360" fill="#9c27b0"/>
+    <rect x="250" y="250" width="140" height="150" fill="#f3e5f5" clip-path="url(#hex7)"/>
+    <circle cx="320" cy="310" r="30" fill="#9c27b0" clip-path="url(#hex7)"/>
+    <text x="320" y="350" font-family="sans-serif" font-weight="bold" font-size="11" fill="#4a148c" text-anchor="middle" clip-path="url(#hex7)">HOTEL STAFF</text>
+  </g>
+</svg>`;
+
+fs.writeFileSync(path.join(targetDir, 'hex_collage.svg'), hexCollageSvg);
+console.log('Hexagonal collage SVG generated successfully!');

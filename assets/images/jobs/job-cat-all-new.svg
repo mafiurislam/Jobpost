@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="380" viewBox="0 0 700 380">
+    <defs>
+      <linearGradient id="posterBg_jobcatallnew" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#ffd600" />
+        <stop offset="100%" stop-color="#ffab00" />
+      </linearGradient>
+    </defs>
+    
+    <!-- Background -->
+    <rect width="700" height="380" rx="16" fill="url(#posterBg_jobcatallnew)"/>
+    
+    <!-- Decorative Graphic Circles -->
+    <circle cx="620" cy="70" r="130" fill="#ffffff" opacity="0.12"/>
+    <circle cx="80" cy="320" r="160" fill="#ffffff" opacity="0.08"/>
+    <rect x="20" y="20" width="660" height="340" rx="12" fill="none" stroke="#ffffff" stroke-width="2" stroke-dasharray="6,6" opacity="0.35"/>
+    
+    <!-- Badge Pill -->
+    <rect x="40" y="38" width="180" height="32" rx="16" fill="#1b1827"/>
+    <text x="130" y="59" font-family="'Outfit', sans-serif" font-weight="900" font-size="13" fill="#ffeb3b" text-anchor="middle">NEW JOB NEWS</text>
+    
+    <!-- Header Web Tag -->
+    <text x="650" y="58" font-family="'Plus Jakarta Sans', sans-serif" font-weight="bold" font-size="12" fill="#1b1827" text-anchor="end" opacity="0.9">WWW.BFCONSULTANCY.IN</text>
+
+    <!-- Main Title -->
+    <text x="350" y="115" font-family="'Outfit', sans-serif" font-weight="900" font-size="28" fill="#1b1827" text-anchor="middle">🔥 ALL NEW & UPDATED JOBS</text>
+    <text x="350" y="152" font-family="'Plus Jakarta Sans', sans-serif" font-weight="600" font-size="16" fill="#37474f" text-anchor="middle">www.bfconsultancy.in • Daily Job Alerts</text>
+    
+    <!-- Salary / Pill Center Box -->
+    <rect x="160" y="180" width="380" height="54" rx="27" fill="#ffffff" stroke="#ffeb3b" stroke-width="2"/>
+    <text x="350" y="214" font-family="'Outfit', sans-serif" font-weight="900" font-size="20" fill="#0d47a1" text-anchor="middle">SALARY: ₹12,000 TO ₹35,000 / MONTH</text>
+
+    <!-- Tagline Banner -->
+    <text x="350" y="272" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="16" fill="#d50000" text-anchor="middle">✨ সমস্ত নতুন চাকরীর খবর ✨</text>
+    
+    <!-- Footer Bar -->
+    <rect x="20" y="305" width="660" height="55" rx="10" fill="rgba(0,0,0,0.35)"/>
+    <text x="40" y="338" font-family="'Outfit', sans-serif" font-weight="bold" font-size="15" fill="#ffffff">BRIGHT FUTURE CONSULTANCY</text>
+    <text x="660" y="338" font-family="'Plus Jakarta Sans', sans-serif" font-weight="bold" font-size="14" fill="#2cb6a6" text-anchor="end">100% FREE PLACEMENT</text>
+  </svg>

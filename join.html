@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join Us / Apply Now - Bright Future Consultancy | Job Application</title>
+  <meta name="description" content="Apply for 100% free job placements and career counseling at Bright Future Consultancy, Golapbagh, Barddhaman, West Bengal.">
+  
+  <link rel="icon" type="image/png" href="assets/images/logo.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <div class="container d-flex justify-content-between align-items-center flex-wrap">
+      <div class="d-flex align-items-center gap-3">
+        <span class="top-bar-badge"><i class="fas fa-certificate me-1"></i> ISO Certified | UDYAM-WB-11-0035754</span>
+      </div>
+      <div class="d-flex align-items-center gap-3">
+        <a href="tel:7001420469"><i class="fas fa-phone-alt me-1"></i> Customer service</a>
+        <span class="text-white-50">|</span>
+        <a href="mailto:brightfutureconsultancybwn@gmail.com"><i class="fas fa-envelope me-1"></i> brightfutureconsultancybwn@gmail.com</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="main-header">
+    <nav class="navbar navbar-expand-lg py-3">
+      <div class="container">
+        <a class="navbar-brand py-0" href="index.html">
+          <img src="assets/images/logo.png" alt="Bright Future Consultancy Logo" class="brand-logo">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarMain">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+            <li class="nav-item"><a class="nav-link" href="jobs.html">Jobs</a></li>
+            <li class="nav-item"><a class="nav-link" href="companies.html">Companies</a></li>
+            <li class="nav-item"><a class="nav-link" href="certificate.html">Certificate</a></li>
+            
+            <li class="nav-item"><a class="nav-link active" href="join.html">Join</a></li>
+            <li class="nav-item"><a class="nav-link" href="service.html">Service</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          </ul>
+          <div class="ms-lg-3 mt-3 mt-lg-0">
+            <a href="join.html" class="btn btn-apply-header">APPLY NOW</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Page Banner -->
+  <section class="page-header">
+    <div class="container">
+      <span class="page-header-subtitle">START YOUR CAREER</span>
+      <h1 class="page-header-title">Candidate Registration</h1>
+    </div>
+  </section>
+
+  <!-- Application Form Section -->
+  <section class="py-5 bg-light">
+    <div class="container py-4">
+      <div class="row justify-content-center">
+        <div class="col-lg-9">
+          <div class="card border-0 shadow-sm p-4 p-md-5 rounded-4">
+            <div class="d-flex align-items-center gap-3 mb-4 border-bottom pb-3">
+              <div class="bg-teal text-white p-3 rounded-circle" style="background-color: var(--primary-teal);">
+                <i class="fas fa-user-plus fa-lg"></i>
+              </div>
+              <div>
+                <h3 class="fw-bold mb-0" style="color: var(--secondary-navy);">Free Job Application Form</h3>
+                <span class="text-muted small">Fill out your details to get placed in top companies near you</span>
+              </div>
+            </div>
+
+            <form id="contactForm">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label for="applicantName" class="form-label fw-bold">Full Name *</label>
+                  <input type="text" class="form-control py-3" id="formName" placeholder="Enter your full name" required>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="applicantPhone" class="form-label fw-bold">WhatsApp / Mobile Number *</label>
+                  <input type="tel" class="form-control py-3" id="formPhone" placeholder="Enter 10-digit phone number" required>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="applicantEmail" class="form-label fw-bold">Email Address *</label>
+                  <input type="email" class="form-control py-3" id="formEmail" placeholder="Enter your email ID" required>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="applicantQualification" class="form-label fw-bold">Highest Educational Qualification</label>
+                  <select class="form-select py-3" id="applicantQualification">
+                    <option value="10th Pass">10th Standard</option>
+                    <option value="12th Pass">12th Standard / Higher Secondary</option>
+                    <option value="Diploma">Diploma / ITI</option>
+                    <option value="Graduate">Graduate (BA, BSc, BCom, BTech)</option>
+                    <option value="Post Graduate">Post Graduate (MA, MSc, MBA)</option>
+                  </select>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="preferredSector" class="form-label fw-bold">Preferred Job Sector</label>
+                  <select class="form-select py-3" id="preferredSector">
+                    <option value="IT & Software">IT & Software Sector</option>
+                    <option value="Banking & Finance">Banking & Financial Sector</option>
+                    <option value="Back Office">Back Office / Administrative</option>
+                    <option value="AC & Appliance">AC & Appliance Technician</option>
+                    <option value="Sales & Executive">Sales & Marketing Executive</option>
+                    <option value="Medical & Lab Tech">Medical & Lab Tech</option>
+                    <option value="Pharmacist">Pharmacy Sector</option>
+                    <option value="Automobile">Automobile Sector</option>
+                  </select>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="preferredLocation" class="form-label fw-bold">Preferred Work Location</label>
+                  <input type="text" class="form-control py-3" id="preferredLocation" placeholder="e.g. Barddhaman, Durgapur, Kolkata">
+                </div>
+
+                <div class="col-12">
+                  <label for="applicantExperience" class="form-label fw-bold">Experience Summary / Work History</label>
+                  <textarea class="form-control" id="formMessage" rows="3" placeholder="Mention total experience, freshers write 'Fresher'"></textarea>
+                </div>
+
+                <div class="col-12 mt-4 text-center">
+                  <button type="submit" class="btn btn-teal text-white rounded-pill px-5 py-3 fw-bold fs-6" style="background-color: var(--primary-teal);">
+                    Submit Application & Connect on WhatsApp <i class="fab fa-whatsapp ms-2"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div id="formAlert" class="d-none mt-3"></div>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <a href="index.html" class="d-inline-block mb-3">
+            <img src="assets/images/logo.png" alt="Bright Future Consultancy" class="footer-brand-logo">
+          </a>
+          <p class="text-muted">
+            Bright Future Consultancy is a premier HR and educational consulting agency in Barddhaman, West Bengal. Est. 2018.
+          </p>
+          <div class="social-icons">
+            <a href="https://wa.me/917001420469" class="social-icon" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-6">
+          <h4 class="footer-title">Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="jobs.html">Apply A Job</a></li>
+            
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-6">
+          <h4 class="footer-title">Support</h4>
+          <ul class="footer-links">
+            <li><a href="contact.html">Help Center</a></li>
+            <li><a href="certificate.html">Certificate Lookup</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <h4 class="footer-title">Our Address</h4>
+          <ul class="footer-contact-info">
+            <li>
+              <i class="fas fa-map-marker-alt"></i>
+              <div>Golapbagh, Barddhaman<br>West Bengal, India</div>
+            </li>
+            <li>
+              <i class="fas fa-envelope"></i>
+              <div><a href="mailto:brightfutureconsultancybwn@gmail.com">brightfutureconsultancybwn@gmail.com</a></div>
+            </li>
+            <li>
+              <i class="fas fa-phone-alt"></i>
+              <div><a href="https://wa.me/917001420469" target="_blank">7001420469</a></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="mb-0">&copy; <span class="current-year">2026</span> Bright Future Consultancy. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/917001420469" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+    <!-- Share Link Modal (Matching Reference Image 2) -->
+    <!-- Share Link Modal (Matching Reference Image 2) -->
+  <div class="modal fade" id="shareModal" tabindex="-1" aria-labelledby="shareModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content share-modal-content" style="background-color: #282b36 !important; color: #ffffff !important; border-radius: 16px !important; border: 1px solid #3f4452 !important;">
+        <!-- Header -->
+        <div class="modal-header share-modal-header border-0 d-flex justify-content-between align-items-center" style="background-color: #282b36 !important; border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;">
+          <div class="d-flex align-items-center gap-2">
+            <i class="fas fa-external-link-alt text-light fs-5"></i>
+            <h5 class="modal-title fw-bold text-white mb-0" id="shareModalLabel">Share link</h5>
+          </div>
+          <div class="d-flex align-items-center gap-2">
+            <div class="contact-avatar-img" style="width: 32px; height: 32px; font-size: 0.85rem; background: #3f4452; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+              <i class="fas fa-user"></i>
+            </div>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+        </div>
+
+        <!-- Modal Body -->
+        <div class="modal-body p-4" style="background-color: #282b36 !important; color: #ffffff !important;">
+          <!-- URL Input Row -->
+          <div class="share-url-box mb-4" style="background-color: #1e2029 !important; border: 1px solid #3f4452 !important; border-radius: 12px !important; padding: 10px 14px !important; display: flex; align-items: center; gap: 10px;">
+            <i class="fas fa-link text-white-50 fs-5"></i>
+            <input type="text" class="share-url-input" id="shareUrlInput" readonly value="" placeholder="https://brightfutureconsultancy.com/jobs.html" style="background: transparent !important; border: none !important; color: #ffffff !important; font-size: 0.9rem !important; width: 100%;">
+            <button type="button" class="share-icon-btn" id="btnQrCode" title="Show QR Code" onclick="toggleQrCode()" style="background: rgba(255,255,255,0.15) !important; border: none !important; color: #fff !important; width: 36px; height: 36px; border-radius: 8px !important; display: flex; align-items: center; justify-content: center;">
+              <i class="fas fa-qrcode"></i>
+            </button>
+            <button type="button" class="share-icon-btn" title="Copy Link" onclick="copyShareLink()" style="background: rgba(255,255,255,0.15) !important; border: none !important; color: #fff !important; width: 36px; height: 36px; border-radius: 8px !important; display: flex; align-items: center; justify-content: center;">
+              <i class="fas fa-copy"></i>
+            </button>
+          </div>
+
+          <!-- QR Code Container -->
+          <div id="qrCodeContainer" class="text-center py-3 d-none mb-4 bg-white rounded-3 p-3">
+            <img id="qrCodeImg" src="" alt="QR Code" style="max-width: 160px; height: auto;">
+            <p class="text-dark small mb-0 mt-2 fw-semibold">Scan QR code to open job link</p>
+          </div>
+
+          <!-- Direct Contacts Row -->
+          <div class="d-flex align-items-center gap-4 overflow-x-auto pb-3 mb-4 border-bottom border-secondary border-opacity-25">
+            <div class="contact-avatar-box" onclick="shareDirectContact('Simran Shikh', 'email')" style="min-width: 80px; text-align: center; cursor: pointer;">
+              <div class="contact-avatar-img mx-auto" style="width: 52px; height: 52px; border-radius: 50%; background: #3f4452; color: #fff; font-weight: 700; display: flex; align-items: center; justify-content: center; position: relative;">
+                SS
+                <div class="contact-badge-icon bg-danger" style="position: absolute; bottom: -2px; right: -2px; width: 22px; height: 22px; border-radius: 50%; font-size: 11px; display: flex; align-items: center; justify-content: center; border: 2px solid #282b36; color: #fff;"><i class="fas fa-envelope"></i></div>
+              </div>
+              <small class="text-white-50 mt-2 d-block" style="font-size: 0.72rem; line-height: 1.2;">Simran Shikh<br>(You)</small>
+            </div>
+
+            <div class="contact-avatar-box" onclick="shareDirectContact('Outlook', 'outlook')" style="min-width: 80px; text-align: center; cursor: pointer;">
+              <div class="contact-avatar-img mx-auto" style="width: 52px; height: 52px; border-radius: 50%; background: #3f4452; color: #fff; font-weight: 700; display: flex; align-items: center; justify-content: center; position: relative;">
+                O
+                <div class="contact-badge-icon bg-primary" style="position: absolute; bottom: -2px; right: -2px; width: 22px; height: 22px; border-radius: 50%; font-size: 11px; display: flex; align-items: center; justify-content: center; border: 2px solid #282b36; color: #fff;"><i class="fas fa-envelope-open"></i></div>
+              </div>
+              <small class="text-white-50 mt-2 d-block" style="font-size: 0.72rem; line-height: 1.2;">outlook_6B9C2...<br>6F96D39ED2...</small>
+            </div>
+
+            <div class="contact-avatar-box" onclick="shareDirectContact('918597463323', 'whatsapp')" style="min-width: 80px; text-align: center; cursor: pointer;">
+              <div class="contact-avatar-img mx-auto" style="width: 52px; height: 52px; border-radius: 50%; background: #3f4452; color: #fff; font-weight: 700; display: flex; align-items: center; justify-content: center; position: relative;">
+                <img src="assets/images/team/manirul.svg" alt="Contact" class="w-100 h-100 rounded-circle" style="object-fit: cover;">
+                <div class="contact-badge-icon bg-success" style="position: absolute; bottom: -2px; right: -2px; width: 22px; height: 22px; border-radius: 50%; font-size: 11px; display: flex; align-items: center; justify-content: center; border: 2px solid #282b36; color: #fff;"><i class="fab fa-whatsapp"></i></div>
+              </div>
+              <small class="text-white-50 mt-2 d-block" style="font-size: 0.72rem; line-height: 1.2;">+91 85974<br>63323</small>
+            </div>
+
+            <div class="contact-avatar-box" onclick="shareDirectContact('918697629432', 'whatsapp')" style="min-width: 80px; text-align: center; cursor: pointer;">
+              <div class="contact-avatar-img mx-auto" style="width: 52px; height: 52px; border-radius: 50%; background: #3f4452; color: #fff; font-weight: 700; display: flex; align-items: center; justify-content: center; position: relative;">
+                <i class="fas fa-user text-white-50"></i>
+                <div class="contact-badge-icon bg-success" style="position: absolute; bottom: -2px; right: -2px; width: 22px; height: 22px; border-radius: 50%; font-size: 11px; display: flex; align-items: center; justify-content: center; border: 2px solid #282b36; color: #fff;"><i class="fab fa-whatsapp"></i></div>
+              </div>
+              <small class="text-white-50 mt-2 d-block" style="font-size: 0.72rem; line-height: 1.2;">+91 86976<br>29432</small>
+            </div>
+
+            <div class="contact-avatar-box" onclick="shareDirectContact('919332601587', 'whatsapp')" style="min-width: 80px; text-align: center; cursor: pointer;">
+              <div class="contact-avatar-img mx-auto" style="width: 52px; height: 52px; border-radius: 50%; background: #3f4452; color: #fff; font-weight: 700; display: flex; align-items: center; justify-content: center; position: relative;">
+                <img src="assets/images/team/hafijur.svg" alt="Contact" class="w-100 h-100 rounded-circle" style="object-fit: cover;">
+                <div class="contact-badge-icon bg-success" style="position: absolute; bottom: -2px; right: -2px; width: 22px; height: 22px; border-radius: 50%; font-size: 11px; display: flex; align-items: center; justify-content: center; border: 2px solid #282b36; color: #fff;"><i class="fab fa-whatsapp"></i></div>
+              </div>
+              <small class="text-white-50 mt-2 d-block" style="font-size: 0.72rem; line-height: 1.2;">+91 93326<br>01587</small>
+            </div>
+          </div>
+
+          <!-- Share Using Platforms Grid -->
+          <h6 class="fw-bold text-white mb-3" style="font-size: 0.95rem;">Share using</h6>
+          
+          <div class="row g-2 text-center">
+            <!-- 1. Nearby Sharing -->
+            <div class="col-4 col-sm-3 col-md-2">
+              <a href="javascript:void(0)" class="share-platform-item" onclick="triggerNativeShare()" style="color: #e2e8f0 !important; text-decoration: none !important;">
+                <div class="share-platform-icon-box text-info" style="width: 48px; height: 48px; border-radius: 14px; background: #1e2029; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin: 0 auto 6px;">
+                  <i class="fas fa-rss-square"></i>
+                </div>
+                <small style="font-size: 0.78rem;">Nearby Sharing</small>
+              </a>
+            </div>
+
+            <!-- 2. Facebook -->
+            <div class="col-4 col-sm-3 col-md-2">
+              <a href="#" id="shareFb" target="_blank" class="share-platform-item" style="color: #e2e8f0 !important; text-decoration: none !important;">
+                <div class="share-platform-icon-box text-primary" style="width: 48px; height: 48px; border-radius: 14px; background: #1e2029; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin: 0 auto 6px;">
+                  <i class="fab fa-facebook"></i>
+                </div>
+                <small style="font-size: 0.78rem;">Facebook</small>
+              </a>
+            </div>
+
+            <!-- 3. Gmail -->
+            <div class="col-4 col-sm-3 col-md-2">
+              <a href="#" id="shareGmail" target="_blank" class="share-platform-item" style="color: #e2e8f0 !important; text-decoration: none !important;">
+                <div class="share-platform-icon-box text-danger" style="width: 48px; height: 48px; border-radius: 14px; background: #1e2029; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin: 0 auto 6px;">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <small style="font-size: 0.78rem;">Gmail</small>
+              </a>
+            </div>
+
+            <!-- 4. Copilot -->
+            <div class="col-4 col-sm-3 col-md-2">
+              <a href="javascript:void(0)" class="share-platform-item" onclick="shareCopilot()" style="color: #e2e8f0 !important; text-decoration: none !important;">
+                <div class="share-platform-icon-box" style="width: 48px; height: 48px; border-radius: 14px; background: linear-gradient(135deg, #00c6ff, #0072ff); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin: 0 auto 6px;">
+                  <i class="fas fa-robot"></i>
+                </div>
+                <small style="font-size: 0.78rem;">Copilot</small>
+              </a>
+            </div>
+
+            <!-- 5. Microsoft 365 -->
+            <div class="col-4 col-sm-3 col-md-2">
+              <a href="javascript:void(0)" class="share-platform-item" onclick="shareCopilot()" style="color: #e2e8f0 !important; text-decoration: none !important;">
+                <div class="share-platform-icon-box" style="width: 48px; height: 48px; border-radius: 14px; background: linear-gradient(135deg, #0072ff, #7f00ff); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin: 0 auto 6px;">
+                  <i class="fab fa-microsoft"></i>
+                </div>
+                <small style="font-size: 0.78rem;">Microsoft 365</small>
+              </a>
+            </div>
+
+            <!-- 6. Outlook -->
+            <div class="col-4 col-sm-3 col-md-2">
+              <a href="#" id="shareOutlook" target="_blank" class="share-platform-item" style="color: #e2e8f0 !important; text-decoration: none !important;">
+                <div class="share-platform-icon-box text-primary" style="width: 48px; height: 48px; border-radius: 14px; background: #1e2029; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin: 0 auto 6px;">
+                  <i class="fas fa-envelope-open-text"></i>
+                </div>
+                <small style="font-size: 0.78rem;">Outlook</small>
+              </a>
+            </div>
+
+            <!-- 7. WhatsApp -->
+            <div class="col-4 col-sm-3 col-md-2">
+              <a href="#" id="shareWa" target="_blank" class="share-platform-item" style="color: #e2e8f0 !important; text-decoration: none !important;">
+                <div class="share-platform-icon-box text-success" style="width: 48px; height: 48px; border-radius: 14px; background: #1e2029; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin: 0 auto 6px;">
+                  <i class="fab fa-whatsapp"></i>
+                </div>
+                <small style="font-size: 0.78rem;">WhatsApp</small>
+              </a>
+            </div>
+
+            <!-- 8. Twitter / X -->
+            <div class="col-4 col-sm-3 col-md-2">
+              <a href="#" id="shareTw" target="_blank" class="share-platform-item" style="color: #e2e8f0 !important; text-decoration: none !important;">
+                <div class="share-platform-icon-box text-light" style="width: 48px; height: 48px; border-radius: 14px; background: #1e2029; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin: 0 auto 6px;">
+                  <i class="fab fa-x-twitter"></i>
+                </div>
+                <small style="font-size: 0.78rem;">Twitter</small>
+              </a>
+            </div>
+
+            <!-- 9. LinkedIn -->
+            <div class="col-4 col-sm-3 col-md-2">
+              <a href="#" id="shareLinkedin" target="_blank" class="share-platform-item" style="color: #e2e8f0 !important; text-decoration: none !important;">
+                <div class="share-platform-icon-box text-info" style="width: 48px; height: 48px; border-radius: 14px; background: #1e2029; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin: 0 auto 6px;">
+                  <i class="fab fa-linkedin"></i>
+                </div>
+                <small style="font-size: 0.78rem;">LinkedIn</small>
+              </a>
+            </div>
+
+            <!-- 10. Telegram -->
+            <div class="col-4 col-sm-3 col-md-2">
+              <a href="#" id="shareTg" target="_blank" class="share-platform-item" style="color: #e2e8f0 !important; text-decoration: none !important;">
+                <div class="share-platform-icon-box text-info" style="width: 48px; height: 48px; border-radius: 14px; background: #1e2029; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin: 0 auto 6px;">
+                  <i class="fab fa-telegram-plane"></i>
+                </div>
+                <small style="font-size: 0.78rem;">Telegram</small>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+      </div>
+    </div>
+  </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
