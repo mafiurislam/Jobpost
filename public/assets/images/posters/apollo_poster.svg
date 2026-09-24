@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="400" viewBox="0 0 700 400">
+  <defs>
+    <linearGradient id="bgApollo" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#004e92" />
+      <stop offset="50%" stop-color="#0066b2" />
+      <stop offset="100%" stop-color="#0080ff" />
+    </linearGradient>
+  </defs>
+  <rect width="700" height="400" fill="url(#bgApollo)"/>
+  
+  <text x="240" y="50" font-family="'Outfit', sans-serif" font-weight="900" font-size="24" fill="#ffffff" text-anchor="middle">APOLLO PHARMACIES LIMITED</text>
+  
+  <rect x="80" y="65" width="320" height="42" rx="8" fill="#ffcc00"/>
+  <text x="240" y="94" font-family="'Outfit', sans-serif" font-weight="900" font-size="22" fill="#d90429" text-anchor="middle">URGENT HIRING!</text>
+  
+  <text x="240" y="140" font-family="'Outfit', sans-serif" font-weight="900" font-size="26" fill="#ffffff" text-anchor="middle">SALARY: ₹15,000 - ₹20,000 / MO</text>
+  
+  <text x="240" y="180" font-family="'Plus Jakarta Sans', sans-serif" font-weight="bold" font-size="16" fill="#00d2ff" text-anchor="middle">✔ Pharmacy Assistant / Trainee</text>
+  <text x="240" y="210" font-family="'Plus Jakarta Sans', sans-serif" font-weight="bold" font-size="16" fill="#00d2ff" text-anchor="middle">✔ Retail Pharmacist (D.Pharm / B.Pharm)</text>
+  <text x="240" y="240" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" fill="#ffffff" text-anchor="middle">Qualifications: 10th / 12th / Diploma / Graduate</text>
+  
+  <rect x="140" y="275" width="200" height="45" rx="22" fill="#00b894"/>
+  <text x="240" y="304" font-family="'Outfit', sans-serif" font-weight="bold" font-size="18" fill="#ffffff" text-anchor="middle">APPLY NOW</text>
+  
+  <g transform="translate(450, 50)">
+    <circle cx="90" cy="75" r="40" fill="#f8c291"/>
+    <path d="M 50,60 C 50,30 70,20 90,20 C 110,20 130,30 130,60 Z" fill="#004e92"/>
+    <path d="M 30,300 L 30,150 Q 30,120 90,120 Q 150,120 150,150 L 150,300 Z" fill="#ffffff"/>
+    <path d="M 75,120 L 75,300 M 105,120 L 105,300" stroke="#00b894" stroke-width="6"/>
+  </g>
+</svg>

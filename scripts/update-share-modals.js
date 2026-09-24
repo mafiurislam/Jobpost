@@ -1,6 +1,9 @@
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 const projectDir = path.join(__dirname, '..');
 
 const shareModalHtml = `  <!-- Share Link Modal (Matching Reference Image 2) -->
@@ -194,10 +197,19 @@ const shareModalHtml = `  <!-- Share Link Modal (Matching Reference Image 2) -->
     </div>
   </div>`;
 
-const htmlFiles = fs.readdirSync(projectDir).filter(f => f.endsWith('.html'));
+const getHtmlFiles = (dir) => {
+  if (!fs.existsSync(dir)) return [];
+  return fs.readdirSync(dir)
+    .filter(f => f.endsWith('.html'))
+    .map(f => path.join(dir, f));
+};
 
-htmlFiles.forEach(file => {
-  const filePath = path.join(projectDir, file);
+const allHtmlFiles = [
+  ...getHtmlFiles(projectDir),
+  ...getHtmlFiles(path.join(projectDir, 'public'))
+];
+
+allHtmlFiles.forEach(filePath => {
   let content = fs.readFileSync(filePath, 'utf8');
 
   // Replace existing share modal
@@ -205,5 +217,5 @@ htmlFiles.forEach(file => {
   content = content.replace(/<div class="modal fade" id="shareModal"[\s\S]*?<\/div>\s*<\/div>\s*<\/div>/gi, shareModalHtml);
 
   fs.writeFileSync(filePath, content, 'utf8');
-  console.log(`Updated dark share modal in ${file}`);
+  console.log(`Updated dark share modal in ${path.basename(filePath)} (${filePath.includes('public') ? 'public' : 'root'})`);
 });

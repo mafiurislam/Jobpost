@@ -1,159 +1,58 @@
-# 🌟 Bright Future Consultancy - Job & Career Portal
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
-[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
-[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-[![Bootstrap 5](https://img.shields.io/badge/Bootstrap_5-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)](https://getbootstrap.com/)
-[![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
+<p align="center">
+<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+</p>
 
-A modern, high-performance, responsive web application for **Bright Future Consultancy** — an ISO 9001:2015 certified job recruitment and placement agency operating in Purba Barddhaman and across West Bengal.
+## About Laravel
 
-This portal provides **100% Free Job Vacancies & Placement Registration**, candidate verification, instant WhatsApp application routing, and interactive job category browsing.
+Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
----
+- [Simple, fast routing engine](https://laravel.com/docs/routing).
+- [Powerful dependency injection container](https://laravel.com/docs/container).
+- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
+- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
+- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
+- [Robust background job processing](https://laravel.com/docs/queues).
+- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-## 📸 Key Features
+Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-- **100% Free Placements**: Zero candidate fees, zero registration fees.
-- **Real-Time Job Search & Filtering**: Filter job openings dynamically by job title, sector (Banking, Retail, NAPS, IT, Overseas, Medical, etc.), and location.
-- **Direct Candidate Application & WhatsApp Routing**: Submit job application forms directly, triggering customized WhatsApp messages pre-filled with candidate details for instant counselor connection.
-- **ISO Certificate Verification Simulator**: Input registration ID to verify candidate certificates instantly with visual badges and authentication details.
-- **Multi-Platform Share Modal & QR Generator**: Share job vacancies across WhatsApp, Telegram, Facebook, Twitter, LinkedIn, Email, and dynamic QR code generation.
-- **Placements Carousel Slider**: Interactive sliding showcase of recently placed candidates across partner companies.
-- **Responsive Green & White Theme**: Modern, polished aesthetic optimized for mobile, tablet, and desktop screens with smooth micro-animations.
+## Learning Laravel
 
----
+Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-## 📁 Repository Directory Structure
+In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-```
-Bright-Feature/
-├── .github/
-│   └── workflows/
-│       └── deploy.yml           # GitHub Actions workflow for GitHub Pages auto-deployment
-├── assets/
-│   ├── css/
-│   │   └── style.css            # Custom Green & White theme design system & utilities
-│   ├── js/
-│   │   └── main.js              # Interactive UI handlers, job filters, share modal, & slider
-│   └── images/                  # Clean SVG & raster visual assets
-│       ├── companies/           # Company branding & hex collage graphics
-│       ├── courses/             # Course & skill sector icons
-│       ├── jobs/                # Specific job category SVG icons
-│       ├── placements/          # Candidate portrait badges
-│       ├── posters/             # Promotional job banners & posters
-│       ├── roles/               # Job role vector illustrations
-│       ├── sectors/             # Sector icons
-│       ├── team/                # Team member portraits
-│       ├── hero-banner.png      # Homepage hero visual
-│       └── logo.png             # Official company logo
-├── scripts/                     # Node.js helper scripts for asset & database management
-│   ├── fix-localhost-urls.js
-│   ├── generate-assets.js
-│   ├── generate-job-posters.js
-│   └── ...
-├── index.html                   # Homepage & Hero Banner
-├── about.html                   # About Us & Company Overview
-├── categories.html              # Comprehensive Job Categories
-├── certificate.html            # ISO Certificate Verification Portal
-├── companies.html               # Partner Hiring Companies
-├── contact.html                 # Contact Us & Google Map Location
-├── jobs.html                    # Job Openings List & Filtering System
-├── join.html                    # Free Placement Registration Form
-├── service.html                 # Services & Placement Solutions
-├── singlejobs.html              # Individual Job Details View
-├── server.js                    # Zero-dependency Node.js HTTP Server for local development
-├── package.json                 # Project manifest & npm scripts
-├── .gitignore                   # Excluded build artifacts & OS files
-├── LICENSE                      # MIT Open Source License
-└── README.md                    # Project Documentation
+You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+
+## Agentic Development
+
+Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+
+```bash
+composer require laravel/boost --dev
+
+php artisan boost:install
 ```
 
----
+Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
 
-## 🚀 How to Run Locally
+## Contributing
 
-### Prerequisites
-- Node.js (v14.0 or higher) installed on your system.
+Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-### Running the Project
+## Code of Conduct
 
-1. **Clone or Download the Repository:**
-   ```bash
-   git clone https://github.com/mafiurislam/boubanquate.git
-   cd Bright-Feature
-   ```
+In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-2. **Start the Local Development Server:**
-   ```bash
-   npm start
-   # or
-   node server.js
-   ```
+## Security Vulnerabilities
 
-3. **Open in Browser:**
-   Navigate to [http://localhost:8080](http://localhost:8080) to view the portal.
+If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
----
+## License
 
-## 📤 How to Upload to GitHub
-
-Follow these steps to upload this project to a new or existing repository on GitHub:
-
-### Option A: Using Git CLI (Recommended)
-
-1. **Create a New Repository on GitHub:**
-   - Go to [GitHub New Repository](https://github.com/new).
-   - Enter your repository name (e.g., `bright-future-consultancy`).
-   - Leave "Initialize with README" **unchecked** (since README is already included).
-   - Click **Create repository**.
-
-2. **Push Local Repository to GitHub:**
-   Open terminal inside the project directory and run:
-   ```bash
-   # Ensure branch is named main
-   git branch -M main
-
-   # Add your GitHub repository remote URL
-   git remote add origin https://github.com/YOUR-USERNAME/YOUR-REPOSITORY-NAME.git
-
-   # Add all files, commit, and push
-   git add .
-   git commit -m "Initial commit: Production-ready Bright Future Consultancy portal"
-   git push -u origin main
-   ```
-
-### Option B: Using GitHub Desktop
-
-1. Open **GitHub Desktop**.
-2. Click `File` > `Add Local Repository...`.
-3. Browse and select the `Bright Feature` folder.
-4. Click `Publish repository` to upload directly to your GitHub account.
-
----
-
-## 🌐 Deploying to GitHub Pages (Live Hosting)
-
-This repository includes a pre-configured GitHub Actions workflow (`.github/workflows/deploy.yml`) for **1-click automated deployment**:
-
-1. In your GitHub repository, go to **Settings** > **Pages**.
-2. Under **Build and deployment** > **Source**, select **GitHub Actions**.
-3. Push any commit to `main` branch. GitHub Actions will automatically build and publish your site live!
-4. Your website will be accessible at `https://<YOUR-USERNAME>.github.io/<YOUR-REPOSITORY-NAME>/`.
-
----
-
-## 💻 Tech Stack & Libraries
-
-- **Markup**: Semantic HTML5 with meta tags for SEO.
-- **Styling**: Vanilla CSS3, custom CSS variables, Bootstrap 5.3 framework.
-- **Icons**: FontAwesome 6 Pro & SVG graphic vectors.
-- **Scripting**: Vanilla JavaScript (ES6+), DOM Manipulation, Web APIs (Clipboard, Web Share).
-- **Server**: Native Node.js `http` module.
-
----
-
-## 📄 License
-
-This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).

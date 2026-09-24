@@ -1,31 +1,19 @@
 {
-  "name": "bright-future-consultancy",
-  "version": "1.0.0",
-  "description": "Bright Future Consultancy - 100% Free Job Vacancies & Placement Registration Platform in Purba Barddhaman and West Bengal",
-  "main": "server.js",
-  "scripts": {
-    "start": "node server.js",
-    "dev": "node server.js",
-    "build:assets": "node scripts/generate-assets.js",
-    "fix:urls": "node scripts/fix-localhost-urls.js"
-  },
-  "keywords": [
-    "job-portal",
-    "consultancy",
-    "placements",
-    "barddhaman",
-    "west-bengal",
-    "career",
-    "free-jobs",
-    "iso-certified"
-  ],
-  "author": "Bright Future Consultancy",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/mafiurislam/boubanquate.git"
-  },
-  "engines": {
-    "node": ">=14.0.0"
-  }
+    "$schema": "https://www.schemastore.org/package.json",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "build": "vite build",
+        "dev": "vite"
+    },
+    "devDependencies": {
+        "@tailwindcss/vite": "^4.0.0",
+        "concurrently": "^10.0.3",
+        "laravel-vite-plugin": "^3.1",
+        "tailwindcss": "^4.0.0",
+        "vite": "^8.0.0"
+    },
+    "optionalDependencies": {
+        "@laravel/multiplex": "^0.4.1"
+    }
 }

@@ -1,0 +1,2 @@
+# Keep database.sqlite tracked for turnkey Hostinger deployment
+!database.sqlite
