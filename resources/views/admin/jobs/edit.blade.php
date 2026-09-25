@@ -113,10 +113,10 @@
           </div>
         </div>
 
-        <div class="d-flex justify-content-end gap-2 pt-3 border-top">
-          <a href="{{ route('admin.jobs.index') }}" class="btn btn-outline-secondary px-4">Cancel</a>
-          <button type="submit" class="btn btn-warning px-5 fw-bold rounded-pill">
-            <i class="fas fa-save me-1"></i> Update Job Post
+        <div class="d-flex flex-column-reverse flex-sm-row justify-content-end gap-2 pt-3 border-top">
+          <a href="{{ route('admin.jobs.index') }}" class="btn btn-outline-secondary px-4 py-2 text-center">Cancel</a>
+          <button type="submit" class="btn btn-success px-4 py-2 fw-bold rounded-pill text-center text-white shadow-sm">
+            <i class="fas fa-save me-1 text-white"></i> Update Job Post
           </button>
         </div>
       </form>

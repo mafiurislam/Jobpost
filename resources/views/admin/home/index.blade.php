@@ -5,37 +5,40 @@
 
 @section('content')
 
-<div class="card card-custom p-4 mb-4">
-  <div class="d-flex align-items-center justify-content-between mb-3">
-    <div>
-      <h4 class="fw-bold text-dark mb-1"><i class="fas fa-layer-group text-success me-2"></i> Dynamic Home Page Sections</h4>
-      <p class="text-secondary small mb-0">Every section on the live Home Page is listed below with clear **section-name separators**. Click **Edit Section** to customize titles, text, images, or leadership details.</p>
-    </div>
+<div class="card card-custom p-3 p-md-4 mb-3 mb-md-4 shadow-sm border-0">
+  <div>
+    <h4 class="fw-bold text-dark mb-1 d-flex align-items-center gap-2">
+      <span class="badge bg-info bg-opacity-15 text-info p-2 rounded-3">
+        <i class="fas fa-layer-group fa-sm"></i>
+      </span>
+      <span>Dynamic Home Page Sections</span>
+    </h4>
+    <p class="text-secondary small mb-0">Every section on the live Home Page is listed below. Click <strong>Edit Section</strong> to customize titles, text, images, or leadership details.</p>
   </div>
 </div>
 
-<div class="row g-4">
+<div class="row g-3 g-md-4">
   @foreach($sections as $section)
   <div class="col-12">
-    <div class="card card-custom overflow-hidden">
+    <div class="card card-custom overflow-hidden shadow-sm border-0">
       <!-- Section-Name Separator Header -->
-      <div class="bg-dark text-white p-3 d-flex align-items-center justify-content-between" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;">
-        <div class="d-flex align-items-center gap-2">
-          <span class="badge bg-success fw-bold text-uppercase px-3 py-2" style="font-size: 0.85rem;">{{ $section->section_name }}</span>
-          <span class="text-white-50 small ms-2">Key: <code>{{ $section->section_key }}</code></span>
+      <div class="bg-dark text-white p-3 d-flex align-items-center justify-content-between flex-wrap gap-2" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;">
+        <div class="d-flex align-items-center gap-2 flex-wrap">
+          <span class="badge bg-success fw-bold text-uppercase px-3 py-2 text-white" style="font-size: 0.85rem;">{{ $section->section_name }}</span>
+          <span class="text-white-50 small ms-1">Key: <code>{{ $section->section_key }}</code></span>
         </div>
         <div>
           @if($section->is_visible)
-            <span class="badge bg-success bg-opacity-20 text-success border border-success border-opacity-30 rounded-pill px-3 py-1 fw-bold">Live Visible</span>
+            <span class="badge bg-success bg-opacity-25 text-success border border-success border-opacity-40 rounded-pill px-3 py-1 fw-bold">Live Visible</span>
           @else
-            <span class="badge bg-secondary rounded-pill px-3 py-1 fw-bold">Hidden</span>
+            <span class="badge bg-secondary rounded-pill px-3 py-1 fw-bold text-white">Hidden</span>
           @endif
         </div>
       </div>
 
-      <div class="card-body p-4">
-        <div class="row align-items-center g-4">
-          <div class="col-md-8">
+      <div class="card-body p-3 p-md-4">
+        <div class="row align-items-center g-3">
+          <div class="col-12 col-md-8">
             <h5 class="fw-bold text-dark mb-2">{{ $section->title ?? 'Untitled Section' }}</h5>
             <p class="text-secondary small mb-3">{{ Str::limit($section->description, 180) }}</p>
             
@@ -52,9 +55,9 @@
             </div>
           </div>
 
-          <div class="col-md-4 text-end">
-            <a href="{{ route('admin.home.edit', $section->section_key) }}" class="btn btn-success fw-bold rounded-pill px-4 py-2">
-              <i class="fas fa-edit me-1"></i> Edit Section Content & Image
+          <div class="col-12 col-md-4 text-start text-md-end">
+            <a href="{{ route('admin.home.edit', $section->section_key) }}" class="btn btn-success fw-bold rounded-pill px-4 py-2 w-100 w-md-auto text-center text-white shadow-sm">
+              <i class="fas fa-edit me-1 text-white"></i> Edit Section
             </a>
           </div>
         </div>

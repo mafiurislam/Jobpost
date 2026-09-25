@@ -1744,3 +1744,51 @@ body {
   .btn-apply-header:hover::after {
     left: 120%;
   }
+
+/* ==========================================================================
+   Universal High-Contrast White Text (#FFFFFF) on All Green Buttons
+   ========================================================================== */
+.btn-success,
+.btn-brand,
+.btn-teal,
+.btn-emerald,
+.btn-whatsapp,
+.btn-outline-success,
+a.btn-success,
+button.btn-success,
+a.btn-brand,
+button.btn-brand,
+a.btn-outline-success,
+button.btn-outline-success,
+.hero-btn-primary,
+.btn-apply-header {
+  background-color: #15803d !important;
+  color: #ffffff !important;
+  border-color: #15803d !important;
+  font-weight: 700;
+  text-decoration: none !important;
+}
+
+.btn-success:hover,
+.btn-brand:hover,
+.btn-teal:hover,
+.btn-emerald:hover,
+.btn-outline-success:hover,
+.btn-outline-success:focus,
+.btn-outline-success:active,
+.hero-btn-primary:hover,
+.btn-apply-header:hover {
+  background-color: #166534 !important;
+  color: #ffffff !important;
+  border-color: #166534 !important;
+}
+
+.btn-success *,
+.btn-brand *,
+.btn-teal *,
+.btn-emerald *,
+.btn-outline-success *,
+.hero-btn-primary *,
+.btn-apply-header * {
+  color: #ffffff !important;
+}

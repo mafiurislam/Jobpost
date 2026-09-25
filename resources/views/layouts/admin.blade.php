@@ -7,7 +7,7 @@
   <title>@yield('title', 'Admin Dashboard - Bright Future Consultancy')</title>
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="{{ asset('assets/images/logo.png') }}">
+  <link rel="icon" type="image/png" href="{{ asset($siteLogo ?? 'assets/images/logo.png') }}">
 
   <!-- Bootstrap 5 CSS & FontAwesome -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -167,7 +167,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark admin-navbar sticky-top py-2">
     <div class="container-fluid px-4">
       <a class="navbar-brand d-flex align-items-center gap-3" href="{{ route('admin.dashboard') }}">
-        <img src="{{ asset('assets/images/logo.png') }}" alt="Logo" class="brand-logo-admin">
+        <img src="{{ asset($siteLogo ?? 'assets/images/logo.png') }}" alt="Logo" class="brand-logo-admin">
         <div class="lh-sm">
           <div class="fw-bold text-white fs-5" style="letter-spacing: 0.5px;">ADMIN DASHBOARD</div>
           <small class="text-white-50 fs-7" style="font-size: 0.75rem;">Bright Future Consultancy Placement Cell</small>

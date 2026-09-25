@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin Login - Bright Future Consultancy</title>
-  <link rel="icon" type="image/png" href="{{ asset('assets/images/logo.png') }}">
+  <link rel="icon" type="image/png" href="{{ asset($siteLogo ?? 'assets/images/logo.png') }}">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -89,7 +89,7 @@
 
   <div class="login-card">
     <div class="login-header">
-      <img src="{{ asset('assets/images/logo.png') }}" alt="Bright Future Consultancy" class="brand-logo-login">
+      <img src="{{ asset($siteLogo ?? 'assets/images/logo.png') }}" alt="{{ $siteName ?? 'Bright Future Consultancy' }}" class="brand-logo-login">
       <h4 class="fw-bold text-dark mb-1">Admin Portal Login</h4>
       <p class="text-muted small mb-0">Manage Job Posts & Placements Dynamically</p>
     </div>

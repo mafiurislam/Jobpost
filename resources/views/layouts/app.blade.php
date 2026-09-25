@@ -21,16 +21,159 @@
   <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 
   <style>
-    body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      background-color: #f8fafc;
-      color: #1e293b;
+    html, body {
+      overflow-x: hidden;
+      max-width: 100vw;
     }
 
     .site-logo-img {
-      max-height: 55px;
+      max-height: 52px;
       width: auto;
       object-fit: contain;
+      display: block;
+      transition: all 0.25s ease;
+    }
+
+    @media (max-width: 767.98px) {
+      .site-logo-img {
+        max-height: 44px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .site-logo-img {
+        max-height: 38px;
+      }
+    }
+
+    /* Universal Crisp White Text Color on All Green Buttons (#FFFFFF) */
+    .btn-success,
+    .btn-brand,
+    .btn-teal,
+    .btn-emerald,
+    .btn-whatsapp,
+    .btn-outline-success,
+    a.btn-success,
+    button.btn-success,
+    a.btn-brand,
+    button.btn-brand,
+    a.btn-outline-success,
+    button.btn-outline-success,
+    .hero-btn-primary,
+    .btn-apply-header {
+      background-color: #15803d !important;
+      color: #ffffff !important;
+      border-color: #15803d !important;
+      font-weight: 700;
+      text-decoration: none !important;
+    }
+
+    .btn-success:hover,
+    .btn-brand:hover,
+    .btn-teal:hover,
+    .btn-emerald:hover,
+    .btn-outline-success:hover,
+    .btn-outline-success:focus,
+    .btn-outline-success:active,
+    .hero-btn-primary:hover,
+    .btn-apply-header:hover {
+      background-color: #166534 !important;
+      color: #ffffff !important;
+      border-color: #166534 !important;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(21, 128, 61, 0.35);
+    }
+
+    .btn-success *,
+    .btn-brand *,
+    .btn-teal *,
+    .btn-emerald *,
+    .btn-outline-success *,
+    .hero-btn-primary *,
+    .btn-apply-header * {
+      color: #ffffff !important;
+    }
+
+    /* Fixed Floating Contact Buttons (Bottom-Right) */
+    .floating-contact-actions {
+      position: fixed;
+      bottom: 24px;
+      right: 20px;
+      z-index: 1050;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: flex-end;
+      pointer-events: none;
+    }
+
+    .floating-btn {
+      pointer-events: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 10px 18px;
+      border-radius: 50px;
+      color: #ffffff !important;
+      font-weight: 700;
+      font-size: 0.88rem;
+      text-decoration: none !important;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.22);
+      transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .floating-btn i {
+      font-size: 1.1rem;
+      color: #ffffff !important;
+    }
+
+    .floating-btn-call {
+      background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+    }
+
+    .floating-btn-call:hover {
+      background: linear-gradient(135deg, #15803d 0%, #166534 100%);
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 10px 25px rgba(22, 163, 74, 0.45);
+      color: #ffffff !important;
+    }
+
+    .floating-btn-email {
+      background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+    }
+
+    .floating-btn-email:hover {
+      background: linear-gradient(135deg, #0369a1 0%, #075985 100%);
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 10px 25px rgba(2, 132, 199, 0.45);
+      color: #ffffff !important;
+    }
+
+    /* Mobile Floating Buttons */
+    @media (max-width: 575.98px) {
+      .floating-contact-actions {
+        bottom: 18px;
+        right: 14px;
+        gap: 10px;
+      }
+
+      .floating-btn {
+        width: 48px;
+        height: 48px;
+        padding: 0;
+        border-radius: 50%;
+        justify-content: center;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.28);
+      }
+
+      .floating-btn .floating-btn-label {
+        display: none;
+      }
+
+      .floating-btn i {
+        font-size: 1.2rem;
+      }
     }
 
     .top-bar {
@@ -345,15 +488,8 @@
 
   <!-- Top Announcement Bar -->
   <div class="top-bar">
-    <div class="container d-flex justify-content-between align-items-center flex-wrap">
-      <div class="d-flex align-items-center gap-3">
-        <span class="top-bar-badge"><i class="fas fa-certificate me-1"></i> ISO Certified | UDYAM-WB-11-0035754</span>
-      </div>
-      <div class="d-flex align-items-center gap-3">
-        <a href="tel:{{ str_replace(' ', '', $contactPhone ?? '7001420469') }}"><i class="fas fa-phone-alt me-1"></i> {{ $contactPhone ?? '+91 7001420469' }}</a>
-        <span class="text-white-50">|</span>
-        <a href="mailto:{{ $contactEmail ?? 'brightfutureconsultancybwn@gmail.com' }}"><i class="fas fa-envelope me-1"></i> {{ $contactEmail ?? 'brightfutureconsultancybwn@gmail.com' }}</a>
-      </div>
+    <div class="container d-flex justify-content-center align-items-center text-center">
+      <span class="top-bar-badge"><i class="fas fa-certificate me-1"></i> ISO Certified | UDYAM-WB-11-0035754</span>
     </div>
   </div>
 
@@ -361,27 +497,27 @@
   <header class="main-header">
     <nav class="navbar navbar-expand-lg py-3">
       <div class="container">
-        <a class="navbar-brand d-flex align-items-center gap-2" href="{{ route('home') }}">
+        <a class="navbar-brand py-0 d-flex align-items-center" href="{{ route('home') }}" aria-label="{{ $siteName ?? 'Bright Future Consultancy' }}">
           <img src="{{ asset($siteLogo ?? 'assets/images/logo.png') }}" alt="{{ $siteName ?? 'Bright Future Consultancy' }}" class="site-logo-img">
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+        <button class="navbar-toggler border-0 shadow-none px-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarMain">
-          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-            <li class="nav-item"><a class="nav-link {{ request()->routeIs('home') ? 'active' : '' }}" href="{{ route('home') }}">Home</a></li>
-            <li class="nav-item"><a class="nav-link {{ request()->routeIs('jobs.*') ? 'active' : '' }}" href="{{ route('jobs.index') }}">Jobs & Vacancies</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ url('/categories.html') }}">Manpower Sectors</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ url('/companies.html') }}">Companies</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ url('/about.html') }}">About Us</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ url('/contact.html') }}">Contact</a></li>
+          <ul class="navbar-nav mx-auto mb-3 mb-lg-0 py-2 py-lg-0">
+            <li class="nav-item"><a class="nav-link px-3 {{ request()->routeIs('home') ? 'active' : '' }}" href="{{ route('home') }}">Home</a></li>
+            <li class="nav-item"><a class="nav-link px-3 {{ request()->routeIs('jobs.*') ? 'active' : '' }}" href="{{ route('jobs.index') }}">Jobs & Vacancies</a></li>
+            <li class="nav-item"><a class="nav-link px-3" href="{{ url('/categories.html') }}">Manpower Sectors</a></li>
+            <li class="nav-item"><a class="nav-link px-3" href="{{ url('/companies.html') }}">Companies</a></li>
+            <li class="nav-item"><a class="nav-link px-3" href="{{ url('/about.html') }}">About Us</a></li>
+            <li class="nav-item"><a class="nav-link px-3" href="{{ url('/contact.html') }}">Contact</a></li>
           </ul>
-          <div class="d-flex align-items-center gap-3">
-            <a href="https://wa.me/91{{ $whatsappNumber ?? '7001420469' }}" target="_blank" class="btn btn-brand">
+          <div class="d-flex flex-column flex-sm-row align-items-stretch align-items-lg-center gap-2 gap-lg-3 pt-2 pt-lg-0 border-top border-lg-0">
+            <a href="https://wa.me/91{{ $whatsappNumber ?? '7001420469' }}" target="_blank" class="btn btn-brand text-center">
               <i class="fab fa-whatsapp me-1"></i> WhatsApp Jobs
             </a>
-            <a href="{{ route('admin.login') }}" class="btn btn-outline-secondary rounded-pill px-3 py-2 btn-sm fw-semibold">
-              <i class="fas fa-user-lock me-1"></i> Admin
+            <a href="{{ route('admin.login') }}" class="btn btn-outline-secondary rounded-pill px-3 py-2 btn-sm fw-semibold text-center">
+              <i class="fas fa-user-lock me-1"></i> Admin Portal
             </a>
           </div>
         </div>
@@ -399,8 +535,12 @@
     <div class="container">
       <div class="row g-4 mb-5">
         <div class="col-lg-4">
-          <div class="d-flex align-items-center gap-2 mb-3">
-            <img src="{{ asset($siteLogo ?? 'assets/images/logo.png') }}" alt="{{ $siteName ?? 'Bright Future Consultancy' }}" class="site-logo-img bg-white p-2 rounded">
+          <div class="d-flex align-items-center gap-3 mb-3">
+            <img src="{{ asset($siteLogo ?? 'assets/images/logo.png') }}" alt="{{ $siteName ?? 'Bright Future Consultancy' }}" class="site-logo-img bg-white p-2 rounded-3 shadow-sm" style="max-height: 52px; width: auto;">
+            <div class="d-flex flex-column text-start">
+              <span class="fw-bold text-white fs-5 leading-tight">{{ $siteName ?? 'Bright Future Consultancy' }}</span>
+              <small class="text-success fw-semibold">{{ $siteTagline ?? 'HR & Educational Consulting' }}</small>
+            </div>
           </div>
           <p class="text-secondary mb-4">{{ $footerAbout ?? 'Bright Future Consultancy is a premier HR and educational consulting agency in West Bengal, providing 100% genuine job updates and career guidance.' }}</p>
           <div class="d-flex gap-2">
@@ -453,6 +593,21 @@
       </div>
     </div>
   </footer>
+
+  <!-- Fixed Floating Contact Action Buttons (Bottom-Right) -->
+  <div class="floating-contact-actions" aria-label="Quick Contact">
+    <!-- Call Button -->
+    <a href="tel:{{ str_replace(' ', '', $contactPhone ?? '7001420469') }}" class="floating-btn floating-btn-call" title="Call Helpline (+91 7001420469)" aria-label="Call Helpline">
+      <i class="fas fa-phone-alt"></i>
+      <span class="floating-btn-label">Call Us</span>
+    </a>
+
+    <!-- Email Button -->
+    <a href="mailto:{{ $contactEmail ?? 'brightfutureconsultancybwn@gmail.com' }}" class="floating-btn floating-btn-email" title="Send Email" aria-label="Send Email">
+      <i class="fas fa-envelope"></i>
+      <span class="floating-btn-label">Email Us</span>
+    </a>
+  </div>
 
   <!-- JS Dependencies -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

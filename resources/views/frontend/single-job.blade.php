@@ -61,7 +61,7 @@
             <div class="p-4 position-relative text-center text-white" style="background: #000000; min-height: 220px;">
               <div class="position-absolute top-0 start-0 p-3">
                 <div class="bg-white rounded-circle p-1 d-flex align-items-center justify-content-center" style="width: 45px; height: 45px;">
-                  <img src="{{ asset($siteLogo) }}" alt="{{ $siteName }}" class="w-100 h-100 object-fit-contain">
+                  <img src="{{ asset($siteLogo ?? 'assets/images/logo.png') }}" alt="{{ $siteName }}" class="w-100 h-100 object-fit-contain">
                 </div>
               </div>
 

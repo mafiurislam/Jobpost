@@ -83,6 +83,7 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     // Logo Management
     Route::get('/logo', [LogoController::class, 'index'])->name('logo.index');
     Route::post('/logo', [LogoController::class, 'update'])->name('logo.update');
+    Route::post('/logo/reset', [LogoController::class, 'reset'])->name('logo.reset');
 
     // Home Page Sections Management
     Route::get('/home', [HomeSectionController::class, 'index'])->name('home.index');

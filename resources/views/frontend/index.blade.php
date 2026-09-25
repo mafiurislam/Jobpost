@@ -119,7 +119,7 @@
             <div class="job-card-header">
               <div class="d-flex justify-content-between align-items-start">
                 <div class="logo-badge">
-                  <img src="{{ asset($siteLogo) }}" alt="{{ $siteName }}">
+                  <img src="{{ asset($siteLogo ?? 'assets/images/logo.png') }}" alt="{{ $siteName }}">
                 </div>
                 <span class="pill-badge">{{ $job->badge_tag ?? '100% FREE JOBS' }}</span>
               </div>
