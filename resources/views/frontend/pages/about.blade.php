@@ -89,103 +89,45 @@
 </section>
 
 <!-- Leadership & Management Team Section -->
-<section class="py-5 bg-light">
+@if($teamSectionVisible ?? true)
+<section class="py-5 bg-light" id="leadership-team">
   <div class="container py-4">
     <div class="text-center max-w-xl mx-auto mb-5">
-      <span class="text-success fw-bold text-uppercase small" style="letter-spacing: 1.5px;">LEADERSHIP & EXPERTISE</span>
-      <h2 class="fw-extrabold text-dark mt-1" style="font-size: 2.2rem;">Meet Our Leadership Team</h2>
-      <p class="text-secondary">Dedicated counselors and HR professionals helping you take the next big step in your career.</p>
+      <span class="text-success fw-bold text-uppercase small" style="letter-spacing: 1.5px;">{{ $teamSectionTagline ?? 'LEADERSHIP & EXPERTISE' }}</span>
+      <h2 class="fw-extrabold text-dark mt-1" style="font-size: 2.2rem;">{{ $teamSectionTitle ?? 'Meet Our Leadership Team' }}</h2>
+      <p class="text-secondary">{{ $teamSectionSubtitle ?? 'Dedicated counselors and HR professionals helping you take the next big step in your career.' }}</p>
     </div>
 
     <div class="row g-4 justify-content-center">
-      
-      <!-- CEO / Founder -->
+      @forelse($teamMembers ?? [] as $member)
       <div class="col-md-6 col-lg-4">
-        <div class="card h-100 border-0 shadow-sm rounded-4 p-4 text-center bg-white">
-          <div class="mx-auto mb-3" style="width: 120px; height: 120px; border-radius: 50%; border: 3px solid #16a34a; padding: 4px; overflow: hidden; background: #ffffff;">
-            <img src="{{ asset('assets/images/team/manirul.svg') }}" alt="Mohammad Manirul" class="w-100 h-100 rounded-circle" style="object-fit: cover;">
+        <div class="card h-100 border-0 shadow-sm rounded-4 p-4 text-center bg-white position-relative">
+          <div class="mx-auto mb-3" style="width: 120px; height: 120px; border-radius: 50%; border: 3px solid #16a34a; padding: 4px; overflow: hidden; background: #ffffff; display: flex; align-items: center; justify-content: center;">
+            @if($member->image_url)
+              <img src="{{ $member->image_url }}" alt="{{ $member->name }}" class="w-100 h-100 rounded-circle" style="object-fit: cover;">
+            @else
+              <div class="w-100 h-100 rounded-circle bg-success bg-opacity-10 text-success fw-bold d-flex align-items-center justify-content-center fs-3">
+                {{ $member->initials }}
+              </div>
+            @endif
           </div>
-          <h5 class="fw-bold text-dark mb-1">Mohammad Manirul</h5>
-          <span class="badge bg-success bg-opacity-10 text-success fw-semibold px-3 py-1 rounded-pill mb-3" style="font-size: 0.85rem;">Founder & CEO</span>
+          <h5 class="fw-bold text-dark mb-3">{{ $member->name }}</h5>
+          @if(!empty($member->bio))
           <p class="text-secondary small mb-0" style="line-height: 1.6;">
-            Visionary founder dedicated to transparent placement services, youth empowerment, and student career transformation across West Bengal.
+            {{ $member->bio }}
           </p>
+          @endif
         </div>
       </div>
-
-      <!-- Director / Operations -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card h-100 border-0 shadow-sm rounded-4 p-4 text-center bg-white">
-          <div class="mx-auto mb-3" style="width: 120px; height: 120px; border-radius: 50%; border: 3px solid #16a34a; padding: 4px; overflow: hidden; background: #ffffff;">
-            <img src="{{ asset('assets/images/team/hafijur.svg') }}" alt="Hafijur Mondal" class="w-100 h-100 rounded-circle" style="object-fit: cover;">
-          </div>
-          <h5 class="fw-bold text-dark mb-1">Hafijur Mondal</h5>
-          <span class="badge bg-success bg-opacity-10 text-success fw-semibold px-3 py-1 rounded-pill mb-3" style="font-size: 0.85rem;">Director & Operations</span>
-          <p class="text-secondary small mb-0" style="line-height: 1.6;">
-            Spearheading company recruitment drives, employer tie-ups, logistics, and verification protocols for verified spot hiring drives.
-          </p>
-        </div>
+      @empty
+      <div class="col-12 text-center py-5">
+        <p class="text-muted">No leadership profiles are currently active.</p>
       </div>
-
-      <!-- Placement Head -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card h-100 border-0 shadow-sm rounded-4 p-4 text-center bg-white">
-          <div class="mx-auto mb-3" style="width: 120px; height: 120px; border-radius: 50%; border: 3px solid #16a34a; padding: 4px; overflow: hidden; background: #ffffff;">
-            <img src="{{ asset('assets/images/team/samim.svg') }}" alt="Sk Samim" class="w-100 h-100 rounded-circle" style="object-fit: cover;">
-          </div>
-          <h5 class="fw-bold text-dark mb-1">Sk Samim</h5>
-          <span class="badge bg-success bg-opacity-10 text-success fw-semibold px-3 py-1 rounded-pill mb-3" style="font-size: 0.85rem;">Placement Head</span>
-          <p class="text-secondary small mb-0" style="line-height: 1.6;">
-            Guiding candidates through interview rounds, aptitude test coaching, and securing direct corporate payroll job contracts.
-          </p>
-        </div>
-      </div>
-
-      <!-- Overseas Coordinator -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card h-100 border-0 shadow-sm rounded-4 p-4 text-center bg-white">
-          <div class="mx-auto mb-3" style="width: 120px; height: 120px; border-radius: 50%; border: 3px solid #16a34a; padding: 4px; overflow: hidden; background: #ffffff;">
-            <img src="{{ asset('assets/images/team/sahil.svg') }}" alt="Sahil Sk" class="w-100 h-100 rounded-circle" style="object-fit: cover;">
-          </div>
-          <h5 class="fw-bold text-dark mb-1">Sahil Sk</h5>
-          <span class="badge bg-success bg-opacity-10 text-success fw-semibold px-3 py-1 rounded-pill mb-3" style="font-size: 0.85rem;">Overseas Coordinator</span>
-          <p class="text-secondary small mb-0" style="line-height: 1.6;">
-            Managing Gulf and Europe trade test verification, visa documentation assistance, and airport departure orientation.
-          </p>
-        </div>
-      </div>
-
-      <!-- Training Lead -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card h-100 border-0 shadow-sm rounded-4 p-4 text-center bg-white">
-          <div class="mx-auto mb-3" style="width: 120px; height: 120px; border-radius: 50%; border: 3px solid #16a34a; padding: 4px; overflow: hidden; background: #ffffff;">
-            <img src="{{ asset('assets/images/team/dhiman.svg') }}" alt="Dhiman Das" class="w-100 h-100 rounded-circle" style="object-fit: cover;">
-          </div>
-          <h5 class="fw-bold text-dark mb-1">Dhiman Das</h5>
-          <span class="badge bg-success bg-opacity-10 text-success fw-semibold px-3 py-1 rounded-pill mb-3" style="font-size: 0.85rem;">Training & Skill Head</span>
-          <p class="text-secondary small mb-0" style="line-height: 1.6;">
-            Conducting vocational skill development, computer operator training, and interview grooming sessions for students.
-          </p>
-        </div>
-      </div>
-
-      <!-- Candidate Relations -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card h-100 border-0 shadow-sm rounded-4 p-4 text-center bg-white">
-          <div class="mx-auto mb-3" style="width: 120px; height: 120px; border-radius: 50%; border: 3px solid #16a34a; padding: 4px; overflow: hidden; background: #ffffff;">
-            <img src="{{ asset('assets/images/team/prasanna.svg') }}" alt="Prasanna Ghosh" class="w-100 h-100 rounded-circle" style="object-fit: cover;">
-          </div>
-          <h5 class="fw-bold text-dark mb-1">Prasanna Ghosh</h5>
-          <span class="badge bg-success bg-opacity-10 text-success fw-semibold px-3 py-1 rounded-pill mb-3" style="font-size: 0.85rem;">Public Relations</span>
-          <p class="text-secondary small mb-0" style="line-height: 1.6;">
-            Assisting candidates with inquiry resolution, helpline queries, document upload support, and WhatsApp job subscriptions.
-          </p>
-        </div>
-      </div>
-
+      @endforelse
     </div>
   </div>
 </section>
+@endif
 
 <!-- Call to Action Banner -->
 <section class="py-5 text-white text-center" style="background: linear-gradient(135deg, #15803d 0%, #166534 100%);">

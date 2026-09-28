@@ -75,9 +75,13 @@
                 <p class="text-info fw-semibold small mb-2">www.bfconsultancy.in</p>
                 <p class="text-white-50 extra-small mb-3" style="font-size: 0.75rem;">{{ $job->location }}</p>
 
-                <a href="https://wa.me/91{{ $whatsappNumber ?? '7001420469' }}?text=Hi,%20I%20want%20to%20apply%20for%20{{ urlencode($job->title) }}" target="_blank" class="btn btn-danger rounded-pill px-5 py-2 fw-bold text-uppercase shadow" style="background-color: #d63031;">
+                <button type="button" class="btn btn-danger rounded-pill px-5 py-2 fw-bold text-uppercase shadow btn-open-apply-modal"
+                        data-job-title="{{ $job->title }}"
+                        data-job-sector="{{ $job->sector_name ?? $job->sector_slug }}"
+                        data-job-location="{{ $job->location }}"
+                        style="background-color: #d63031;">
                   APPLY NOW
-                </a>
+                </button>
               </div>
 
               <div class="position-absolute bottom-0 end-0 p-2 d-none d-sm-block opacity-75">
@@ -145,9 +149,13 @@
                 <i class="fas fa-share-alt me-1"></i> Share
               </button>
 
-              <a href="https://wa.me/91{{ $whatsappNumber ?? '7001420469' }}?text=Hi,%20I%20am%20interested%20in%20applying%20for%20{{ urlencode($job->title) }}" target="_blank" class="btn btn-success fw-bold rounded-pill px-4 py-2" style="background-color: #15803d;">
+              <button type="button" class="btn btn-success fw-bold rounded-pill px-4 py-2 btn-open-apply-modal"
+                      data-job-title="{{ $job->title }}"
+                      data-job-sector="{{ $job->sector_name ?? $job->sector_slug }}"
+                      data-job-location="{{ $job->location }}"
+                      style="background-color: #15803d;">
                 APPLY NOW
-              </a>
+              </button>
             </div>
           </div>
 

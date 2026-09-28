@@ -7,6 +7,7 @@ use App\Models\HomeSection;
 use App\Models\Job;
 use App\Models\JobApplication;
 use App\Models\SiteSetting;
+use App\Models\TeamMember;
 use Illuminate\Http\Request;
 
 class FrontendController extends Controller
@@ -30,6 +31,12 @@ class FrontendController extends Controller
         $siteAddress = SiteSetting::get('address', 'Golapbagh, Barddhaman, West Bengal, India');
         $footerAbout = SiteSetting::get('footer_about');
 
+        $teamMembers = TeamMember::active()->ordered()->get();
+        $teamSectionTagline = SiteSetting::get('team_section_tagline', 'LEADERSHIP & EXPERTISE');
+        $teamSectionTitle = SiteSetting::get('team_section_title', 'Meet Our Leadership Team');
+        $teamSectionSubtitle = SiteSetting::get('team_section_subtitle', 'Dedicated counselors and HR professionals helping you take the next big step in your career.');
+        $teamSectionVisible = (bool) SiteSetting::get('team_section_visible', true);
+
         return view('frontend.index', compact(
             'sections',
             'jobs',
@@ -39,7 +46,12 @@ class FrontendController extends Controller
             'contactEmail',
             'whatsappNumber',
             'siteAddress',
-            'footerAbout'
+            'footerAbout',
+            'teamMembers',
+            'teamSectionTagline',
+            'teamSectionTitle',
+            'teamSectionSubtitle',
+            'teamSectionVisible'
         ));
     }
 
@@ -135,14 +147,22 @@ class FrontendController extends Controller
         $sections = HomeSection::all()->keyBy('section_key');
         $jobs = Job::active()->take(6)->get();
 
+        $teamMembers = TeamMember::active()->ordered()->get();
+        $teamSectionTagline = SiteSetting::get('team_section_tagline', 'LEADERSHIP & EXPERTISE');
+        $teamSectionTitle = SiteSetting::get('team_section_title', 'Meet Our Leadership Team');
+        $teamSectionSubtitle = SiteSetting::get('team_section_subtitle', 'Dedicated counselors and HR professionals helping you take the next big step in your career.');
+        $teamSectionVisible = (bool) SiteSetting::get('team_section_visible', true);
+
         if (view()->exists("frontend.pages.{$cleanPage}")) {
             return view("frontend.pages.{$cleanPage}", compact(
-                'siteLogo', 'siteName', 'contactPhone', 'contactEmail', 'whatsappNumber', 'siteAddress', 'sections', 'jobs'
+                'siteLogo', 'siteName', 'contactPhone', 'contactEmail', 'whatsappNumber', 'siteAddress', 'sections', 'jobs',
+                'teamMembers', 'teamSectionTagline', 'teamSectionTitle', 'teamSectionSubtitle', 'teamSectionVisible'
             ));
         }
 
         return view('frontend.index', compact(
-            'sections', 'jobs', 'siteLogo', 'siteName', 'contactPhone', 'contactEmail', 'whatsappNumber', 'siteAddress'
+            'sections', 'jobs', 'siteLogo', 'siteName', 'contactPhone', 'contactEmail', 'whatsappNumber', 'siteAddress',
+            'teamMembers', 'teamSectionTagline', 'teamSectionTitle', 'teamSectionSubtitle', 'teamSectionVisible'
         ));
     }
 
@@ -170,17 +190,35 @@ class FrontendController extends Controller
     public function submitJoin(Request $request)
     {
         $validated = $request->validate([
+            'application_date' => 'nullable|date',
             'name' => 'required|string|max:255',
             'phone' => 'required|string|max:50',
             'email' => 'required|email|max:255',
             'qualification' => 'nullable|string|max:255',
             'preferred_sector' => 'nullable|string|max:255',
             'preferred_location' => 'nullable|string|max:255',
+            'job_title' => 'nullable|string|max:255',
             'experience' => 'nullable|string',
+            'connect_preference' => 'nullable|string|max:100',
+            'notes' => 'nullable|string',
         ]);
 
-        JobApplication::create($validated);
+        if (empty($validated['application_date'])) {
+            $validated['application_date'] = now()->toDateString();
+        }
 
-        return back()->with('success', 'Your application has been registered successfully! Our placement executive will review your profile and share suitable interview call letters.');
+        $application = JobApplication::create($validated);
+
+        $message = 'Your application has been registered successfully! Our placement executive will review your profile and contact you with suitable opportunities.';
+
+        if ($request->expectsJson() || $request->ajax()) {
+            return response()->json([
+                'success' => true,
+                'message' => $message,
+                'application_id' => $application->id,
+            ]);
+        }
+
+        return back()->with('success', $message);
     }
 }

@@ -128,7 +128,7 @@ class DatabaseSeeder extends Seeder
                         'joining_date' => 'June 2026',
                     ],
                 ],
-                'is_visible' => true,
+                'is_visible' => false,
                 'sort_order' => 4,
             ],
             [
@@ -694,5 +694,7 @@ class DatabaseSeeder extends Seeder
         foreach ($jobPosts as $post) {
             Job::updateOrCreate(['slug' => $post['slug']], $post);
         }
+
+        $this->call(TeamMemberSeeder::class);
     }
 }

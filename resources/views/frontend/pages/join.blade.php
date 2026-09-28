@@ -55,8 +55,13 @@
             @csrf
             
             <div class="row g-4">
-              <div class="col-md-6">
-                <label for="name" class="form-label fw-bold text-dark">Full Name <span class="text-danger">*</span></label>
+              <div class="col-md-4">
+                <label for="application_date" class="form-label fw-bold text-dark">Date <span class="text-danger">*</span></label>
+                <input type="date" name="application_date" id="application_date" value="{{ old('application_date', date('Y-m-d')) }}" class="form-control form-control-lg bg-light" required>
+              </div>
+
+              <div class="col-md-8">
+                <label for="name" class="form-label fw-bold text-dark">Candidate Name <span class="text-danger">*</span></label>
                 <input type="text" name="name" id="name" value="{{ old('name') }}" class="form-control form-control-lg bg-light @error('name') is-invalid @enderror" placeholder="Enter your full name" required>
                 @error('name')
                   <div class="invalid-feedback">{{ $message }}</div>
@@ -114,9 +119,18 @@
                 <input type="text" name="preferred_location" id="preferred_location" value="{{ old('preferred_location') }}" class="form-control form-control-lg bg-light" placeholder="e.g. Barddhaman, Kolkata, Durgapur, Overseas">
               </div>
 
-              <div class="col-12">
+              <div class="col-md-8">
                 <label for="experience" class="form-label fw-bold text-dark">Experience Summary / Work History</label>
-                <textarea name="experience" id="experience" rows="3" class="form-control bg-light" placeholder="Mention total experience if any. If fresher, write 'Fresher'.">{{ old('experience') }}</textarea>
+                <textarea name="experience" id="experience" rows="2" class="form-control bg-light" placeholder="Mention total experience if any. If fresher, write 'Fresher'.">{{ old('experience') }}</textarea>
+              </div>
+
+              <div class="col-md-4">
+                <label for="connect_preference" class="form-label fw-bold text-dark">Preferred Connect Method</label>
+                <select name="connect_preference" id="connect_preference" class="form-select form-select-lg bg-light">
+                  <option value="WhatsApp" selected>Connect via WhatsApp</option>
+                  <option value="Phone Call">Direct Phone Call</option>
+                  <option value="Email">Email Communication</option>
+                </select>
               </div>
 
               <div class="col-12 text-muted small">

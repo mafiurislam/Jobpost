@@ -190,9 +190,13 @@
                 View Details <i class="fas fa-arrow-right"></i>
               </a>
 
-              <a href="https://wa.me/91{{ $whatsappNumber ?? '7001420469' }}?text=Hi,%20I%20am%20interested%20in%20applying%20for%20{{ urlencode($job->title) }}" target="_blank" class="btn btn-sm btn-outline-success rounded-pill px-3 fw-bold" style="border-color: #25D366; color: #15803d;">
-                <i class="fab fa-whatsapp me-1 text-success"></i> Apply
-              </a>
+              <button type="button" class="btn btn-sm btn-outline-success rounded-pill px-3 fw-bold btn-open-apply-modal"
+                      data-job-title="{{ $job->title }}"
+                      data-job-sector="{{ $job->sector_name ?? $job->sector_slug }}"
+                      data-job-location="{{ $job->location }}"
+                      style="border-color: #15803d; color: #15803d;">
+                APPLY NOW
+              </button>
             </div>
 
           </div>

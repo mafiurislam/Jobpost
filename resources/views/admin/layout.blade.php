@@ -465,6 +465,12 @@
           <i class="fas fa-plus-circle"></i> Add New Single Job
         </a>
 
+        <!-- SEPARATOR 5: LEADERSHIP TEAM CRUD -->
+        <div class="nav-section-title">Team Management</div>
+        <a class="nav-link {{ request()->routeIs('admin.team.*') ? 'active' : '' }}" href="{{ route('admin.team.index') }}">
+          <i class="fas fa-users-cog"></i> Leadership Team (CRUD)
+        </a>
+
         <!-- SEPARATOR 5: INQUIRIES & APPLICATIONS -->
         <div class="nav-section-title">Inquiries & Candidates</div>
         <a class="nav-link {{ request()->routeIs('admin.applications.*') ? 'active' : '' }}" href="{{ route('admin.applications.index') }}">

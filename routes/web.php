@@ -1,14 +1,15 @@
 <?php
 
+use App\Http\Controllers\Admin\ApplicationController;
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\HomeSectionController;
 use App\Http\Controllers\Admin\JobController;
 use App\Http\Controllers\Admin\LogoController;
 use App\Http\Controllers\Admin\SettingController;
+use App\Http\Controllers\Admin\TeamMemberController;
 use App\Http\Controllers\FrontendController;
 use App\Models\ContactInquiry;
 use App\Models\Job;
-use App\Models\JobApplication;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -99,10 +100,20 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::post('/jobs/{job}/toggle-status', [JobController::class, 'toggleStatus'])->name('jobs.toggle-status');
     Route::delete('/jobs/{job}', [JobController::class, 'destroy'])->name('jobs.destroy');
 
+    // Leadership Team Management & CRUD
+    Route::get('/team', [TeamMemberController::class, 'index'])->name('team.index');
+    Route::get('/team/create', [TeamMemberController::class, 'create'])->name('team.create');
+    Route::post('/team', [TeamMemberController::class, 'store'])->name('team.store');
+    Route::get('/team/{teamMember}/edit', [TeamMemberController::class, 'edit'])->name('team.edit');
+    Route::put('/team/{teamMember}', [TeamMemberController::class, 'update'])->name('team.update');
+    Route::post('/team/{teamMember}/toggle-status', [TeamMemberController::class, 'toggleStatus'])->name('team.toggle-status');
+    Route::delete('/team/{teamMember}', [TeamMemberController::class, 'destroy'])->name('team.destroy');
+    Route::post('/team/section-settings', [TeamMemberController::class, 'updateSection'])->name('team.section-settings');
+
     // Candidate Job Applications
-    Route::get('/applications', fn () => view('admin.applications', [
-        'applications' => JobApplication::latest()->paginate(15),
-    ]))->name('applications.index');
+    Route::get('/applications', [ApplicationController::class, 'index'])->name('applications.index');
+    Route::patch('/applications/{application}/status', [ApplicationController::class, 'updateStatus'])->name('applications.status');
+    Route::delete('/applications/{application}', [ApplicationController::class, 'destroy'])->name('applications.destroy');
 
     // Contact Inquiries
     Route::get('/inquiries', fn () => view('admin.inquiries', [

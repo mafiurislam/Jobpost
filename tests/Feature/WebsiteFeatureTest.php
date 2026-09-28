@@ -110,6 +110,38 @@ class WebsiteFeatureTest extends TestCase
     }
 
     /**
+     * Test registration form submission with all fields and AJAX support.
+     */
+    public function test_registration_form_ajax_and_all_fields(): void
+    {
+        $payload = [
+            'application_date' => '2026-09-28',
+            'name' => 'Rohan Mukherjee',
+            'phone' => '9876543210',
+            'email' => 'rohan@example.com',
+            'preferred_sector' => 'Airlines Ground Staff',
+            'preferred_location' => 'Kolkata Airport',
+            'job_title' => 'Airlines Customer Service Agent',
+            'qualification' => 'Graduate',
+            'experience' => '6 months customer handling',
+            'connect_preference' => 'WhatsApp',
+            'notes' => 'Available for immediate joining.',
+        ];
+
+        // AJAX Submission
+        $ajaxResponse = $this->postJson('/join', $payload);
+        $ajaxResponse->assertStatus(200);
+        $ajaxResponse->assertJsonFragment(['success' => true]);
+
+        $this->assertDatabaseHas('job_applications', [
+            'name' => 'Rohan Mukherjee',
+            'job_title' => 'Airlines Customer Service Agent',
+            'connect_preference' => 'WhatsApp',
+            'preferred_location' => 'Kolkata Airport',
+        ]);
+    }
+
+    /**
      * Test admin authentication and dashboard access.
      */
     public function test_admin_login_and_dashboard_access(): void

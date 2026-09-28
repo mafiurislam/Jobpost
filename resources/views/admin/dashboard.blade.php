@@ -166,6 +166,32 @@
     </div>
   </div>
 
+  <!-- SEPARATOR: LEADERSHIP TEAM CRUD -->
+  <div class="col-12 col-md-6">
+    <div class="card card-custom p-3 p-md-4 h-100 shadow-sm border-0">
+      <div class="d-flex align-items-center gap-3 mb-3">
+        <div class="bg-success text-white rounded-3 p-2 p-md-3 d-flex align-items-center justify-content-center flex-shrink-0" style="width: 46px; height: 46px;">
+          <i class="fas fa-users-cog fa-lg"></i>
+        </div>
+        <div>
+          <h5 class="fw-bold text-dark mb-0">Meet Our Leadership Team (CRUD)</h5>
+          <small class="text-secondary">{{ \App\Models\TeamMember::count() }} Members Registered</small>
+        </div>
+      </div>
+      <p class="text-secondary small mb-4">
+        Customize the Leadership section header, add new executives, update bios and photos, and toggle member visibility live on the website.
+      </p>
+      <div class="mt-auto d-flex flex-column flex-sm-row gap-2">
+        <a href="{{ route('admin.team.index') }}" class="btn btn-dark fw-bold rounded-pill px-4 text-center">
+          <i class="fas fa-users me-1"></i> Manage Team ({{ \App\Models\TeamMember::count() }})
+        </a>
+        <a href="{{ route('admin.team.create') }}" class="btn btn-success fw-bold rounded-pill px-4 text-center">
+          <i class="fas fa-user-plus me-1"></i> Add Member
+        </a>
+      </div>
+    </div>
+  </div>
+
   <!-- SEPARATOR: LOGO MANAGEMENT -->
   <div class="col-12 col-md-6">
     <div class="card card-custom p-3 p-md-4 h-100 shadow-sm border-0">
